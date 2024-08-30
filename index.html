@@ -1,98 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script
-      src="https://kit.fontawesome.com/5e820e8517.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/5e820e8517.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="style.css" />
-  <body>
-    <header>
-      <div class="flex paySell">
-        <div class="flex sell">
-          <img
-            src="assets/starJ.png"
-            alt="jumia star"
-            width="14px"
-            height="14px"
-            style="margin-top: 2px"
-          />
-          <a href="#" class="sellLink">Sell on Jumia</a>
+  <link rel="stylesheet" href="BoxSection.css">
+</head>
+
+<body>
+  <header>
+    <div class="flex paySell">
+      <div class="flex sell">
+        <img src="assets/starJ.png" alt="jumia star" width="14px" height="14px" style="margin-top: 2px" />
+        <a href="#" class="sellLink">Sell on Jumia</a>
+      </div>
+      <div class="flex jumiapay">
+        <div style="display: flex">
+          <p style="font-weight: 700; font-size: 12px">JUMIA</p>
+          <img src="assets/starJ.png" alt="" width="10px" height="10px" style="margin-top: 4px" />
         </div>
-        <div class="flex jumiapay">
-          <div style="display: flex">
-            <p style="font-weight: 700; font-size: 12px">JUMIA</p>
-            <img
-              src="assets/starJ.png"
-              alt=""
-              width="10px"
-              height="10px"
-              style="margin-top: 4px"
-            />
+        <a href="#">PAY</a>
+      </div>
+    </div>
+
+    <nav class="">
+      <div class="nav flex">
+        <!-- <div class="link" > -->
+        <a href="" style="display: flex" class="jumialogo">
+          <p style="font-weight: 700; font-size: 30px">JUMIA</p>
+          <img src="assets/starJ.png" alt="" width="24px" height="24px" style="margin-top: 10px" />
+        </a>
+        <!-- </div> -->
+
+        <div class="flex formInpIcon">
+          <div class="flex searchInputing">
+            <div class="flex searchInput">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search products, brands and categories" class="Input" />
+            </div>
+
+            <button>SEARCH</button>
           </div>
-          <a href="#">PAY</a>
+          <div class="flex navIcons">
+            <a href="#" class="flex">
+              <i class="fa-regular fa-user"></i>
+              <p>Account</p>
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <a href="" class="flex">
+              <i class="fa-regular fa-circle-question"></i>
+              <p>Help</p>
+              <i class="fa-solid fa-caret-down"></i>
+            </a>
+            <a href="" class="flex">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <p>cart</p>
+            </a>
+          </div>
         </div>
       </div>
+    </nav>
+  </header>
 
-      <nav class="">
-        <div class="nav flex">
-          <!-- <div class="link" > -->
-          <a href="" style="display: flex" class="jumialogo">
-            <p style="font-weight: 700; font-size: 30px">JUMIA</p>
-            <img
-              src="assets/starJ.png"
-              alt=""
-              width="24px"
-              height="24px"
-              style="margin-top: 10px"
-            />
-          </a>
-          <!-- </div> -->
-
-          <div class="flex formInpIcon">
-            <div class="flex searchInputing">
-              <div class="flex searchInput">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input
-                  type="text"
-                  placeholder="Search products, brands and categories"
-                  class="Input"
-                />
-              </div>
-
-              <button>SEARCH</button>
-            </div>
-            <div class="flex navIcons">
-              <a href="#" class="flex">
-                <i class="fa-regular fa-user"></i>
-                <p>Account</p>
-                <i class="fa-solid fa-caret-down"></i>
-              </a>
-              <a href="" class="flex">
-                <i class="fa-regular fa-circle-question"></i>
-                <p>Help</p>
-                <i class="fa-solid fa-caret-down"></i>
-              </a>
-              <a href="" class="flex">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <p>cart</p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="mainDiv">
-        <div class="sideBar">
-          <ul class="">
-            <!-- <li>
+  <main>
+    <div class="mainDiv boxTop">
+      <div class="sideBar">
+        <ul class="">
+          <!-- <li>
             <a href="">
               <img
                 src="assets/cookingpot_121628.png"
@@ -104,204 +82,173 @@
               Appliances
             </a>
           </li> -->
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-mobile-screen"></i> Appliances</a
-              >
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-mobile-screen"></i> Phones & Tablets</a
-              >
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-mobile-screen"></i> Health & Beauty</a
-              >
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-mobile-screen"></i> Home & Office</a
-              >
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-mobile-screen"></i> Electronics</a
-              >
-            </li>
-            <li>
-              <a href=""><i class="fa-solid fa-mobile-screen"></i> Fashion</a>
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-mobile-screen"></i> Supermarket</a
-              >
-            </li>
-            <li>
-              <a href=""><i class="fa-solid fa-mobile-screen"></i> Computing</a>
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-mobile-screen"></i> Baby Products</a
-              >
-            </li>
-            <li>
-              <a href=""><i class="fa-solid fa-mobile-screen"></i> Gaming</a>
-            </li>
-          </ul>
-          <p>Musical Insruments</p>
-          <a href=""
-            ><i class="fa-solid fa-mobile-screen"></i> Other categories</a
-          >
-        </div>
-        <div class="slideShowDiv">
-          <div class="slideShow">
-            <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
-            <img src="assets/jumiaShirt.jpg" alt="" class="change imgShow" />
-            <img src="assets/jumiaSpec.jpg" alt="" class="change imgShow" />
-            <img src="assets/jumiaJpay.png" alt="" class="change imgShow" />
-            <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
-            <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
-            <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
-            <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
-          </div>
-
-          <div style="text-align: center" class="spanDot">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Appliances</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Phones & Tablets</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Health & Beauty</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Home & Office</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Electronics</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Fashion</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Supermarket</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Computing</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Baby Products</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-mobile-screen"></i> Gaming</a>
+          </li>
+        </ul>
+        <p>Musical Insruments</p>
+        <a href=""><i class="fa-solid fa-mobile-screen"></i> Other categories</a>
+      </div>
+      <div class="slideShowDiv">
+        <div class="slideShow">
+          <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
+          <img src="assets/jumiaShirt.jpg" alt="" class="change imgShow" />
+          <img src="assets/jumiaSpec.jpg" alt="" class="change imgShow" />
+          <img src="assets/jumiaJpay.png" alt="" class="change imgShow" />
+          <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
+          <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
+          <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
+          <img src="assets/jumiaNivea.png" alt="" class="change imgShow" />
         </div>
 
-        <div class="callToAction flex">
-          <div class="callToActionFDiv">
-            <div class="call">
-              <img
-                src="assets/jumiaPhone.png"
-                alt=""
-                width="36px"
-                height="36px"
-              />
-              <div>
-                <p>CALL TO ORDER</p>
-                <p style="font-weight: 400; font-size: 12px">0700-600-0000</p>
-              </div>
-            </div>
-            <div class="flex call">
-              <img
-                src="assets/jumiaIcone-seller-1.png"
-                alt=""
-                width="36px"
-                height="36px"
-              />
-              <p>Sell on Jumia</p>
-            </div>
-            <div class="flex call">
-              <img
-                src="assets/jumiaDeals.png"
-                alt=""
-                width="36px"
-                height="36px"
-              />
-              <p>Best Deals</p>
-            </div>
-          </div>
-          <img src="assets/jumiaEarn.png" alt="" class="jumiaEarn" />
+        <div style="text-align: center" class="spanDot">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
       </div>
-    </main>
 
-    <!-- <section class="section2"> -->
-    <section class="section2OuterContainer">
-      <div class="flex section2Container">
-        <!-- section2 box1 -->
-        <div class="flex boxContainer">
-         <a href="">
-            <img src="assets/JumiArrival.gif" alt="" />
-            <p>New Arrival</p>
-          </a>
-          <a href="">
-            <img src="assets/jumiaClea.png" alt="" />
-            <p>Clearance Sale</p>
-          </a>
-          <a href="">
-            <img src="assets/jumiaAppliances.png" alt="" />
-            <p>Appliances Deal</p>
-          </a>
+      <div class="callToAction flex">
+        <div class="callToActionFDiv">
+          <div class="call">
+            <img src="assets/jumiaPhone.png" alt="" width="36px" height="36px" />
+            <div>
+              <p>CALL TO ORDER</p>
+              <p style="font-weight: 400; font-size: 12px">0700-600-0000</p>
+            </div>
+          </div>
+          <div class="flex call">
+            <img src="assets/jumiaIcone-seller-1.png" alt="" width="36px" height="36px" />
+            <p>Sell on Jumia</p>
+          </div>
+          <div class="flex call">
+            <img src="assets/jumiaDeals.png" alt="" width="36px" height="36px" />
+            <p>Best Deals</p>
+          </div>
+        </div>
+        <img src="assets/jumiaEarn.png" alt="" class="jumiaEarn" />
+      </div>
+    </div>
+  </main>
 
-         <a href="">
+  <!-- <section class="section2">  boxes  -->
+  <section class=" boxTop ">
+    <div class="flex section2Container boxDesign">
+      <!-- section2 box1 -->
+      <div class="flex boxContainer">
+        <a href="">
+          <img src="assets/JumiArrival.gif" alt="" />
+          <p>New Arrival</p>
+        </a>
+        <a href="">
+          <img src="assets/jumiaClea.png" alt="" />
+          <p>Clearance Sale</p>
+        </a>
+        <a href="">
+          <img src="assets/jumiaAppliances.png" alt="" />
+          <p>Appliances Deal</p>
+        </a>
+
+        <a href="">
           <img src="assets/jumiaBottle.gif" alt="" />
           <p>Beverages</p>
-         </a>
-         <a href="">
+        </a>
+        <a href="">
           <img src="assets/jumiaTab.png" alt="" />
-            <p>Phones & Tablet Deals</p>
-         </a>
-          <a href="">
-            <img src="assets/jumiaFashion.gif" alt="" />
-            <p>Fashion Deals</p>
-          </a>
-        </div>
-        <!-- section2 box2 -->
-        <div class="flex boxContainer">
-          <a href="">
-            <img src="assets/jumiaBeauty.png" alt="" />
-            <p>New Arrival</p>
-          </a>
-          <a href="">
-            <img src="assets/jumiaClea.png" alt="" />
-            <p>Clearance Sale</p>
-          </a>
-          <a href="">
-            <img src="assets/jumiaAppliances.png" alt="" />
-            <p>Appliances Deal</p>
-          </a>
+          <p>Phones & Tablet Deals</p>
+        </a>
+        <a href="">
+          <img src="assets/jumiaFashion.gif" alt="" />
+          <p>Fashion Deals</p>
+        </a>
+      </div>
+      <!-- section2 box2 -->
+      <div class="flex boxContainer">
+        <a href="">
+          <img src="assets/jumiaBeauty.png" alt="" />
+          <p>New Arrival</p>
+        </a>
+        <a href="">
+          <img src="assets/jumiaClea.png" alt="" />
+          <p>Clearance Sale</p>
+        </a>
+        <a href="">
+          <img src="assets/jumiaAppliances.png" alt="" />
+          <p>Appliances Deal</p>
+        </a>
 
-         <a href="">
+        <a href="">
           <img src="assets/jumiaHead.png" alt="" />
           <p>Beverages</p>
-         </a>
-         <a href="">
+        </a>
+        <a href="">
           <img src="assets/jumiaTab.png" alt="" />
-            <p>Phones & Tablet Deals</p>
-         </a>
-          <a href="">
-            <img src="assets/jumiaElectronics.png" alt="" />
-            <p>Fashion Deals</p>
-          </a>
+          <p>Phones & Tablet Deals</p>
+        </a>
+        <a href="">
+          <img src="assets/jumiaElectronics.png" alt="" />
+          <p>Fashion Deals</p>
+        </a>
         <!-- </div> -->
       </div>
-    </section>
+  </section>
 
-    <!-- section3 -->
+  <!-- section3  poster1-->
 
-    <section class="section3OuterContainer">
-      <div class="flex  section3Container">
-        <img src="assets/jumiaChilling.gif" alt="" width="50%" />
+  <section class=" boxTop">
+    <div class="flex  section3Container boxDesign posters">
+      <img src="assets/jumiaChilling.gif" alt=""  />
 
-        <img src="assets/jumiaCooling.gif" alt="" />
+      <img src="assets/jumiaCooling.gif" alt="" />
 
-        <img src="assets/jumiaCooking.gif" alt="" />
+      <img src="assets/jumiaCooking.gif" alt="" />
+    </div>
+  </section>
+
+  <!-- section4 flashsales -->
+
+  <section class="sectionFlash boxTop">
+    <div class="flex flashSale sixBoxTop">
+      <div class="flex flash1">
+        <img src="assets/flash_14241226.png" width="30px" height="30px" alt="">
+        <p style="font-weight: 500;">Flash Sale</p>
       </div>
-    </section>
-
-    <!-- section4 -->
-
-    <section class="section4">
-      <div class="flex flashSale">
-        <div class="flex flash1">
-          <img src="assets/flash_14241226.png" width="30px" height="30px" alt="">
-          <p style="font-weight: 500;">Flash Sale</p>
-        </div>
-        <div class="flash2 flash1">
-          <!-- <p>Time Left: <span id="countDown">08h : 50m : 21s</span></p> -->
-           <div class="flex " style="gap: 10px;">
-            <div class="flex">
+      <div class="flash2 flash1">
+        <!-- <p>Time Left: <span id="countDown">08h : 50m : 21s</span></p> -->
+        <div class="flex " style="gap: 10px;">
+          <div class="flex">
             <p id="hrs"> </p><span> h :</span>
           </div>
           <div class="flex">
@@ -310,105 +257,1523 @@
           <div class="flex">
             <p id="sec"> </p><span>s</span>
           </div>
-           </div>
         </div>
-        <div class="flex flash3" style="font-weight: 500";>
+      </div>
+      <div class="flex flash3" style="font-weight: 500" ;>
+        <p>SEE ALL</p>
+        <i class="fa-solid fa-caret-right"></i>
+      </div>
+    </div>
+
+    <div class="flex flashSaleFlex">
+
+      <div class="box">
+        <span>-40%</span>
+        <img src="assets/flash1.jpg" alt="">
+
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+          <p class="itemsLeft"> 351 items left</p>
+          <div class="stockBar">
+            <div class="stockLevel"></div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-30%</span>
+
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+          <p class="itemsLeft"> 351 items left</p>
+          <div class="stockBar">
+            <div class="stockLevel"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+          <p class="itemsLeft"> 351 items left</p>
+          <div class="stockBar">
+            <div class="stockLevel"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+          <p class="itemsLeft"> 351 items left</p>
+          <div class="stockBar">
+            <div class="stockLevel"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box ">
+        <span>-20%</span>
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p> Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12,000</del>
+          <p class="itemsLeft"> 351 items left</p>
+          <div class="stockBar">
+            <div class="stockLevel"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+          <p class="itemsLeft"> 351 items left</p>
+          <div class="stockBar">
+            <div class="stockLevel"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<!-- section 5 LTS -->
+
+  <section class="sectionLimited boxTop ">
+    <div class="flex Limited sixBoxTop">
+      <div class="flex flash1">
+        <p style="font-weight: 500;">Limited Stock Deals</p>
+      </div>
+      
+      <div class="flex flash3" style="font-weight: 500" ;>
+        <p>SEE ALL</p>
+        <i class="fa-solid fa-caret-right"></i>
+      </div>
+    </div>
+
+    <div class="flex flashSaleFlex">
+
+      <div class="box">
+        <span>-40%</span>
+        <img src="assets/flash1.jpg" alt="">
+
+        <div>
+          <p class="boxName" >Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-30%</span>
+
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box ">
+        <span>-20%</span>
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p class="boxName"> Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12,000</del>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+    </div>
+
+  </section >
+
+
+  <!-- section6 -->
+ 
+  <section class=" boxTop">
+    <div class="flex  posters boxDesign posterBox">
+      <img src="assets/jumiaHisense.gif" alt=""  />
+
+      <img src="assets/jumiaMagic.jpg" alt="" />
+
+    </div>
+  </section>
+
+  <!-- section7 -->
+<!-- backtoschool -->
+<section class="boxTop section7">
+     <p  class="Limited sixBoxTop">Back To School</p>
+     <div class="flex  section3Container boxDesign posters">
+      <img src="assets/JumiaBTS1.png" alt=""  />
+
+      <img src="assets/JumiaBTS3.png" alt="" />
+
+      <img src="assets/jumiBTS2.png" alt="" />
+    </div>
+
+    <div class="flex Limited sixBoxTop boxTop">
+      <div class="flex flash1">
+        <p style="font-weight: 500;">Back To School Deals</p>
+      </div>
+      
+      <div class="flex flash3" style="font-weight: 500" ;>
+        <p>SEE ALL</p>
+        <i class="fa-solid fa-caret-right"></i>
+      </div>
+    </div>
+
+    <div class=" flashSaleFlex">
+
+      <div class="box">
+        <span>-40%</span>
+        <img src="assets/flash1.jpg" alt="">
+
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-30%</span>
+
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box ">
+        <span>-20%</span>
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p> Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12,000</del>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p>Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+    </div>
+
+  </section >
+
+
+  <!-- section8 -->
+  <section class="boxTop section7">
+    <p  class="Limited sixBoxTop">Smart Phones, Smart Discounts</p>
+    <div class="flex  section3Container boxDesign posters">
+     <img src="assets/JumiaBTS1.png" alt=""  />
+
+     <img src="assets/JumiaBTS3.png" alt="" />
+
+     <img src="assets/jumiBTS2.png" alt="" />
+   </div>
+
+   <div class="flex Limited sixBoxTop boxTop">
+     <div class="flex flash1">
+       <p style="font-weight: 500;">Smart Phones, Smart Discounts</p>
+     </div>
+     
+     <div class="flex flash3" style="font-weight: 500" ;>
+       <p>SEE ALL</p>
+       <i class="fa-solid fa-caret-right"></i>
+     </div>
+   </div>
+
+   <div class="flex flashSaleFlex">
+
+     <div class="box">
+       <span>-40%</span>
+       <img src="assets/flash1.jpg" alt="">
+
+       <div>
+         <p>Ace Elec 20000 MAh Utra....</p>
+         <p class="flashPrice">N 8,245</p>
+         <del>N 12000</del>
+
+
+
+       </div>
+     </div>
+
+     <div class="box">
+       <span>-30%</span>
+
+       <img src="assets/flash2.jpg" alt="">
+       <div>
+         <p>Ace Elec 20000 MAh Utra....</p>
+         <p class="flashPrice">N 8,245</p>
+         <del>N 12000</del>
+
+       </div>
+     </div>
+
+     <div class="box">
+       <span>-20%</span>
+       <img src="assets/flash3.jpg" alt="">
+       <div>
+         <p>Ace Elec 20000 MAh Utra....</p>
+         <p class="flashPrice">N 8,245</p>
+         <del>N 12000</del>
+
+       </div>
+     </div>
+
+     <div class="box">
+       <span>-20%</span>
+       <img src="assets/flash4.jpg" alt="">
+       <div>
+         <p>Ace Elec 20000 MAh Utra....</p>
+         <p class="flashPrice">N 8,245</p>
+         <del>N 12000</del>
+
+       </div>
+     </div>
+
+     <div class="box ">
+       <span>-20%</span>
+       <img src="assets/flash5.jpg" alt=" " width="">
+       <div>
+         <p> Ace Elec 20000 MAh Utra....</p>
+         <p class="flashPrice">N 8,245</p>
+         <del>N 12,000</del>
+
+
+       </div>
+     </div>
+
+     <div class="box">
+       <span>-20%</span>
+       <img src="assets/flash6.jpg" alt="">
+       <div>
+         <p>Ace Elec 20000 MAh Utra....</p>
+         <p class="flashPrice">N 8,245</p>
+         <del>N 12000</del>
+
+       </div>
+     </div>
+   </div>
+
+ </section >
+
+ <!-- section9 posters 3 -->
+
+ <section class=" boxTop">
+  <div class="flex  posters boxDesign posterBox">
+    <img src="assets/jumiaHisense.gif" alt=""  />
+
+    <img src="assets/jumiaMagic.jpg" alt="" />
+
+  </div>
+</section>
+<section class=" boxTop">
+  <div class="flex  posters boxDesign posterBox">
+    <img src="assets/jumiaHisense.gif" alt=""  />
+
+    <img src="assets/jumiaMagic.jpg" alt="" />
+
+  </div>
+</section>
+
+
+<!-- section 10 topSI -->
+<section class="sectionLimited boxTop ">
+  <div class="flex topSelling sixBoxTop">
+    <div class="flex flash1">
+      <p style="font-weight: 500;">Top Selling Items</p>
+    </div>
+    
+    <div class="flex flash3" style="font-weight: 500 ; color: orange;" ;>
+      <p >SEE ALL</p>
+      <i class="fa-solid fa-caret-right"></i>
+    </div>
+  </div>
+
+  <div class="flex flashSaleFlex">
+
+    <div class="box">
+      <span>-40%</span>
+      <img src="assets/flash1.jpg" alt="">
+
+      <div>
+        <p>Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-30%</span>
+
+      <img src="assets/flash2.jpg" alt="">
+      <div>
+        <p>Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-20%</span>
+      <img src="assets/flash3.jpg" alt="">
+      <div>
+        <p>Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-20%</span>
+      <img src="assets/flash4.jpg" alt="">
+      <div>
+        <p>Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+
+    <div class="box ">
+      <span>-20%</span>
+      <img src="assets/flash5.jpg" alt=" " width="">
+      <div>
+        <p> Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12,000</del>
+
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-20%</span>
+      <img src="assets/flash6.jpg" alt="">
+      <div>
+        <p>Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+  </div>
+
+</section >
+
+
+<!-- section11 appliance upgrade -->
+<section class="sectionLimited boxTop  ">
+  <p  class="Limited sixBoxTop section11P ">Appliance Upgrade</p>
+
+  <div class="flex flashSaleFlex">
+
+    <div class="box">
+      
+      <img src="assets/flash1.jpg" alt="">
+
+      <div>
+        <p class="appBox">Smart Tv</p>
+       
+
+
+
+      </div>
+    </div>
+
+    <div class="box">
+     
+
+      <img src="assets/flash2.jpg" alt="">
+      <div>
+        <p class="appBox">Refrigerators</p>
+        
+
+      </div>
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash3.jpg" alt="">
+      <div>
+        <p class="appBox">Blender</p>
+       
+
+      </div>
+    </div>
+
+    <div class="box">
+      
+      <img src="assets/flash4.jpg" alt="">
+      <div>
+        <p class="appBox">Microwave </p>
+       
+
+      </div>
+    </div>
+
+    <div class="box ">
+      
+      <img src="assets/flash5.jpg" alt=" " width="">
+      <div>
+        <p class="appBox"> Air Conditioner</p>
+       
+
+
+      </div>
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash6.jpg" alt="">
+      <div>
+        <p class="appBox">Washing Machine</p>
+       
+
+      </div>
+    </div>
+  </div>
+
+  <!-- <section class="sectionLimited  " style="margin: 16px;" > -->
+    <div class="flex Limited sixBoxTop boxTop">
+      <div class="flex flash1">
+        <p style="font-weight: 500;">Appliances Upgrade</p>
+      </div>
+      
+      <div class="flex flash3" style="font-weight: 500" ;>
+        <p>SEE ALL</p>
+        <i class="fa-solid fa-caret-right"></i>
+      </div>
+    </div>
+
+    <div class="flex flashSaleFlex">
+
+      <div class="box">
+        <span>-40%</span>
+        <img src="assets/flash1.jpg" alt="">
+
+        <div>
+          <p class="boxName" >Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-30%</span>
+
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box ">
+        <span>-20%</span>
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p class="boxName"> Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12,000</del>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+    </div>
+
+  <!-- </section > -->
+
+</section >
+
+
+<!-- section12 -- SFC >
+<section class="sectionLimited boxTop  ">
+  <p  class="Limited sixBoxTop section11P ">Shop From Our Collections</p>
+
+  <div class="flex flashSaleFlex">
+
+    <div class="box">
+      
+      <img src="assets/flash1.jpg" alt="">
+
+      <div>
+        <p class="appBox">Smart Tv</p>
+       
+
+
+
+      </div>
+    </div>
+
+    <div class="box">
+     
+
+      <img src="assets/flash2.jpg" alt="">
+      <div>
+        <p class="appBox">Refrigerators</p>
+        
+
+      </div>
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash3.jpg" alt="">
+      <div>
+        <p class="appBox">Blender</p>
+       
+
+      </div>
+    </div>
+
+    <div class="box">
+      
+      <img src="assets/flash4.jpg" alt="">
+      <div>
+        <p class="appBox">Microwave </p>
+       
+
+      </div>
+    </div>
+
+    <div class="box ">
+      
+      <img src="assets/flash5.jpg" alt=" " width="">
+      <div>
+        <p class="appBox"> Air Conditioner</p>
+       
+
+
+      </div>
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash6.jpg" alt="">
+      <div>
+        <p class="appBox">Washing Machine</p>
+       
+
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flashSaleFlex">
+
+    <div class="box">
+      
+      <img src="assets/flash1.jpg" alt="">
+
+      <div>
+        <p class="appBox">Smart Tv</p>
+       
+
+
+
+      </div>
+    </div>
+
+    <div class="box">
+     
+
+      <img src="assets/flash2.jpg" alt="">
+      <div>
+        <p class="appBox">Refrigerators</p>
+        
+
+      </div>
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash3.jpg" alt="">
+      <div>
+        <p class="appBox">Blender</p>
+       
+
+      </div>
+    </div>
+
+    <div class="box">
+      
+      <img src="assets/flash4.jpg" alt="">
+      <div>
+        <p class="appBox">Microwave </p>
+       
+
+      </div>
+    </div>
+
+    <div class="box ">
+      
+      <img src="assets/flash5.jpg" alt=" " width="">
+      <div>
+        <p class="appBox"> Air Conditioner</p>
+       
+
+
+      </div>
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash6.jpg" alt="">
+      <div>
+        <p class="appBox">Washing Machine</p>
+       
+
+      </div>
+    </div>
+  </div>
+  </section>  -->
+
+<!-- section13 TFD -->
+<section class="sectionLimited boxTop ">
+  <div class="flex Limited sixBoxTop">
+    <div class="flex flash1">
+      <p style="font-weight: 500;">Top Fashion Deals</p>
+    </div>
+    
+    <div class="flex flash3" style="font-weight: 500" ;>
+      <p>SEE ALL</p>
+      <i class="fa-solid fa-caret-right"></i>
+    </div>
+  </div>
+
+  <div class="flex flashSaleFlex">
+
+    <div class="box">
+      <span>-40%</span>
+      <img src="assets/flash1.jpg" alt="">
+
+      <div>
+        <p class="boxName" >Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-30%</span>
+
+      <img src="assets/flash2.jpg" alt="">
+      <div>
+        <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-20%</span>
+      <img src="assets/flash3.jpg" alt="">
+      <div>
+        <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-20%</span>
+      <img src="assets/flash4.jpg" alt="">
+      <div>
+        <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+
+    <div class="box ">
+      <span>-20%</span>
+      <img src="assets/flash5.jpg" alt=" " width="">
+      <div>
+        <p class="boxName"> Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12,000</del>
+
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-20%</span>
+      <img src="assets/flash6.jpg" alt="">
+      <div>
+        <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+  </div>
+
+</section >
+
+<!-- section14 CS -->
+<section class="sectionLimited boxTop ">
+  <div class="flex Limited sixBoxTop">
+    <div class="flex flash1" style="gap: 2px;">
+      <p style="font-weight: 500;">Clearance Sales | </p>
+      <span>   Up to 60% OFF</span>
+    </div>
+    
+    <div class="flex flash3" style="font-weight: 500" ;>
+      <p>SEE ALL</p>
+      <i class="fa-solid fa-caret-right"></i>
+    </div>
+  </div>
+
+  <div class="flex flashSaleFlex">
+
+    <div class="box">
+      <span>-40%</span>
+      <img src="assets/flash1.jpg" alt="">
+
+      <div>
+        <p class="boxName" >Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-30%</span>
+
+      <img src="assets/flash2.jpg" alt="">
+      <div>
+        <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-20%</span>
+      <img src="assets/flash3.jpg" alt="">
+      <div>
+        <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-20%</span>
+      <img src="assets/flash4.jpg" alt="">
+      <div>
+        <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+
+    <div class="box ">
+      <span>-20%</span>
+      <img src="assets/flash5.jpg" alt=" " width="">
+      <div>
+        <p class="boxName"> Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12,000</del>
+
+
+      </div>
+    </div>
+
+    <div class="box">
+      <span>-20%</span>
+      <img src="assets/flash6.jpg" alt="">
+      <div>
+        <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+        <p class="flashPrice">N 8,245</p>
+        <del>N 12000</del>
+
+      </div>
+    </div>
+  </div>
+
+</section >
+
+<!-- section15 OS -->
+<section class="sectionLimited boxTop  ">
+  <p  class="Limited sixBoxTop section11P  sameTopCol">Official Stores</p>
+
+  <div class="flex flashSaleFlex">
+
+    <div class="box">
+      
+      <img src="assets/flash1.jpg" alt="">
+
+      
+    </div>
+
+    <div class="box">
+     
+
+      <img src="assets/flash2.jpg" alt="">
+      
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash3.jpg" alt="">
+     
+    </div>
+
+    <div class="box">
+      
+      <img src="assets/flash4.jpg" alt="">
+     
+    </div>
+
+    <div class="box ">
+      
+      <img src="assets/flash5.jpg" alt=" " width="">
+      
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash6.jpg" alt="">
+      
+    </div>
+  </div>
+
+  <div class="flex flashSaleFlex">
+
+    <div class="box">
+      
+      <img src="assets/flash1.jpg" alt="">
+
+     
+    </div>
+
+    <div class="box">
+     
+
+      <img src="assets/flash2.jpg" alt="">
+     
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash3.jpg" alt="">
+     
+    </div>
+
+    <div class="box">
+      
+      <img src="assets/flash4.jpg" alt="">
+     
+    </div>
+
+    <div class="box ">
+      
+      <img src="assets/flash5.jpg" alt=" " width="">
+      
+    </div>
+
+    <div class="box">
+     
+      <img src="assets/flash6.jpg" alt="">
+      <div>
+       
+    </div>
+  </div>
+  </section>  
+
+
+  <!-- section16 AOS -->
+  <section class="sectionLimited boxTop ">
+    <div class="flex sameTopCol sixBoxTop">
+      <div class="flex flash1">
+        <p style="font-weight: 500;">ADIDAS Official Store</p>
+      </div>
+      
+      <div class="flex flash3" style="font-weight: 500" ;>
+        <p>SEE ALL</p>
+        <i class="fa-solid fa-caret-right"></i>
+      </div>
+    </div>
+
+    <div class="flex flashSaleFlex">
+
+      <div class="box">
+        <span>-40%</span>
+        <img src="assets/flash1.jpg" alt="">
+
+        <div>
+          <p class="boxName" >Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-30%</span>
+
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box ">
+        <span>-20%</span>
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p class="boxName"> Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12,000</del>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+    </div>
+
+  </section >
+
+  <!-- section17 TOS -->
+  <section class="sectionLimited boxTop ">
+    <div class="flex sameTopCol sixBoxTop">
+      <div class="flex flash1">
+        <p style="font-weight: 500;">TECNO Official Store</p>
+      </div>
+      
+      <div class="flex flash3" style="font-weight: 500" ;>
+        <p>SEE ALL</p>
+        <i class="fa-solid fa-caret-right"></i>
+      </div>
+    </div>
+
+    <div class="flex flashSaleFlex">
+
+      <div class="box">
+        <span>-40%</span>
+        <img src="assets/flash1.jpg" alt="">
+
+        <div>
+          <p class="boxName" >Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-30%</span>
+
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+
+      <div class="box ">
+        <span>-20%</span>
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p class="boxName"> Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12,000</del>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+
+        </div>
+      </div>
+    </div>
+
+  </section >
+
+  <!-- section18 RS -->
+  <section class="sectionLimited boxTop ">
+    <div class="flex topSelling sixBoxTop">
+      <div class="flex flash1" style="gap: 2px;">
+        <p style="font-weight: 500;">Your Recent Search |  </p>
+        <span>   hp intel core i5</span>
+      </div>
+      
+      <div class="flex flash3" style="font-weight: 500" ;>
+        <p>SEE ALL</p>
+        <i class="fa-solid fa-caret-right"></i>
+      </div>
+    </div>
+  
+    <div class="flex flashSaleFlex">
+  
+      <div class="box">
+        <span>-40%</span>
+        <img src="assets/flash1.jpg" alt="">
+  
+        <div>
+          <p class="boxName" >Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+  
+  
+  
+        </div>
+      </div>
+  
+      <div class="box">
+        <span>-30%</span>
+  
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+  
+        </div>
+      </div>
+  
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+  
+        </div>
+      </div>
+  
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+  
+        </div>
+      </div>
+  
+      <!-- <div class="box ">
+        <span>-20%</span>
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p class="boxName"> Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12,000</del>
+  
+  
+        </div>
+      </div>
+  
+      <div class="box">
+        <span>-20%</span>
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+          <p class="flashPrice">N 8,245</p>
+          <del>N 12000</del>
+  
+        </div>
+      </div> -->
+    </div>
+  
+  </section >
+
+  <!-- section19 SAS -->
+  <section class="sectionLimited boxTop  ">
+    <p  class="Limited sixBoxTop section11P ">Sip And Save</p>
+  
+    <div class="flex flashSaleFlex">
+  
+      <div class="box">
+        
+        <img src="assets/flash1.jpg" alt="">
+  
+        <div>
+          <p class="appBox">Smart Tv</p>
+         
+  
+  
+  
+        </div>
+      </div>
+  
+      <div class="box">
+       
+  
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p class="appBox">Refrigerators</p>
+          
+  
+        </div>
+      </div>
+  
+      <div class="box">
+       
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p class="appBox">Blender</p>
+         
+  
+        </div>
+      </div>
+  
+      <div class="box">
+        
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p class="appBox">Microwave </p>
+         
+  
+        </div>
+      </div>
+  
+      <div class="box ">
+        
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p class="appBox"> Air Conditioner</p>
+         
+  
+  
+        </div>
+      </div>
+  
+      <div class="box">
+       
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p class="appBox">Washing Machine</p>
+         
+  
+        </div>
+      </div>
+    </div>
+  
+    <!-- <section class="sectionLimited  " style="margin: 16px;" > -->
+      <div class="flex Limited sixBoxTop boxTop">
+        <div class="flex flash1">
+          <p style="font-weight: 500;">Handpicked for you</p>
+        </div>
+        
+        <div class="flex flash3" style="font-weight: 500" ;>
           <p>SEE ALL</p>
           <i class="fa-solid fa-caret-right"></i>
         </div>
       </div>
-
+  
       <div class="flex flashSaleFlex">
-
-      <div class="box">
-        <img src="assets/flash1.jpg" alt="">
-        <div>
-          <p style="font-size: 13px;">Ace Elec 20000 MAh Utra....</p>
-          <p>N 8,245</p>
-          <del>N 12000</del>
-          <p> 351 items left</p>
-          <p style="width: 100%; height: 8px; border-radius: 4px; background-color: orange;"></p>
-         <!-- <strike></strike> -->
-         </div>
-         </div>
-
-         <div class="box">
+  
+        <div class="box">
+          <span>-40%</span>
+          <img src="assets/flash1.jpg" alt="">
+  
+          <div>
+            <p class="boxName" >Ace Elec 20000 MAh Utra....</p>
+            <p class="flashPrice">N 8,245</p>
+            <del>N 12000</del>
+  
+  
+  
+          </div>
+        </div>
+  
+        <div class="box">
+          <span>-30%</span>
+  
           <img src="assets/flash2.jpg" alt="">
           <div>
-            <p style="font-size: 13px;">Ace Elec 20000 MAh Utra....</p>
-            <p>N 8,245</p>
+            <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+            <p class="flashPrice">N 8,245</p>
             <del>N 12000</del>
-            <p> 351 items left</p>
-            <p style="width: 100%; height: 8px; border-radius: 4px; background-color: orange;"></p>
-           <!-- <strike></strike> -->
-           </div>
-           </div>
-
-           <div class="box">
-            <img src="assets/flash3.jpg" alt="">
-            <div>
-              <p style="font-size: 13px;">Ace Elec 20000 MAh Utra....</p>
-              <p>N 8,245</p>
-              <del>N 12000</del>
-              <p> 351 items left</p>
-              <p style="width: 100%; height: 8px; border-radius: 4px; background-color: orange;"></p>
-             <!-- <strike></strike> -->
-             </div>
-             </div>
-
-             <div class="box">
-              <img src="assets/flash4.jpg" alt="">
-              <div>
-                <p style="font-size: 13px;">Ace Elec 20000 MAh Utra....</p>
-                <p style="font-weight: bold ;">N 8,245</p>
-                <del>N 12000</del>
-                <p> 351 items left</p>
-                <p style="width: 100%; height: 8px; border-radius: 4px; background-color: orange;"></p>
-               <!-- <strike></strike> -->
-               </div>
-               </div>
-
-               <div class="box ">
-                <img src="assets/flash5.jpg" alt=" " width="">
-                <div>
-                  <p > Ace Elec 20000 MAh Utra....</p>
-                  <p>N 8,245</p>
-                  <del>N 12000</del>
-                  <p> 351 items left</p>
-                  <p style="width: 100%; height: 8px; border-radius: 4px; background-color: orange;"></p>
-                 <!-- <strike></strike> -->
-                 </div>
-                 </div>
-
-                 <div class="box">
-                  <img src="assets/flash6.jpg" alt="">
-                  <div>
-                    <p >Ace Elec 20000 MAh Utra....</p>
-                    <p>N 8,245</p>
-                    <del>N 12000</del>
-                    <p> 351 items left</p>
-                    <p style="width: 100%; height: 8px; border-radius: 4px; background-color: orange;"></p>
-                   <!-- <strike></strike> -->
-                   </div>
-                   </div>
+  
           </div>
-          
-    </section>
-    <!-- <script>
-      
-window.onscroll = function(){
-    var navbar = document.querySelector(".nav");
-    var sticky = navbar.offsetTop;
+        </div>
+  
+        <div class="box">
+          <span>-20%</span>
+          <img src="assets/flash3.jpg" alt="">
+          <div>
+            <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+            <p class="flashPrice">N 8,245</p>
+            <del>N 12000</del>
+  
+          </div>
+        </div>
+  
+        <div class="box">
+          <span>-20%</span>
+          <img src="assets/flash4.jpg" alt="">
+          <div>
+            <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+            <p class="flashPrice">N 8,245</p>
+            <del>N 12000</del>
+  
+          </div>
+        </div>
+  
+        <div class="box ">
+          <span>-20%</span>
+          <img src="assets/flash5.jpg" alt=" " width="">
+          <div>
+            <p class="boxName"> Ace Elec 20000 MAh Utra....</p>
+            <p class="flashPrice">N 8,245</p>
+            <del>N 12,000</del>
+  
+  
+          </div>
+        </div>
+  
+        <div class="box">
+          <span>-20%</span>
+          <img src="assets/flash6.jpg" alt="">
+          <div>
+            <p class="boxName">Ace Elec 20000 MAh Utra....</p>
+            <p class="flashPrice">N 8,245</p>
+            <del>N 12000</del>
+  
+          </div>
+        </div>
+      </div>
+  
+    <!-- </section > -->
+  
+  </section >
 
-    if (window.pageYOffset > sticky) {
-navbar.className.add("fixedNav")
-    } else{
-        navbar.className.remove("fixedNav")
-    }
-}
-    </script> -->
-    <script src="script.js"></script>
-  </body>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
 
 <!-- <img src="assets/starJ.png" alt="jumia star" width="12px" height="12px">

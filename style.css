@@ -16,6 +16,11 @@ body {
     Helvetica Neue, Arial, sans-serif;
 }
 
+.boxTop{
+  padding: 0 100px;
+  margin-top: 16px;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -24,7 +29,6 @@ body {
 .paySell {
   align-items: center;
   padding: 0 100px;
-  flex-wrap: ;
 }
 .sell {
   gap: 4px;
@@ -114,10 +118,7 @@ nav {
 .searchInput i {
   color: gray;
 }
-.Input {
-  
-  /* width: 30vw; */
-}
+
 .Input::placeholder {
   font-size: 16px;
 }
@@ -162,10 +163,8 @@ nav {
 /* main */
 
 main {
-  padding: 0 100px;
-  /* border: 4px solid black; */
-  margin-top: 16px;
-  height: 395px;
+ /* border: 1px solid black; */
+  height: 380px;
 }
 .mainDiv{
     gap: 16px;
@@ -197,12 +196,15 @@ main {
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  margin: 0 20px;
+  width: 8px;
+  height: 8px;
+  /* margin: 0 20px; */
   border-radius: 50%;
   display: inline-block;
   background-color: grey;
+  /* display: flex; */
+  /* gap: 2px; */
+  
 }
 
 .spanDot {
@@ -214,7 +216,8 @@ main {
 
 .slideShow{
     margin: auto;
-    /* position: relative; */
+    position: relative;
+
     max-width: 1000px;
    
 }
@@ -274,11 +277,15 @@ main {
     border-radius: 4px;
 }
 
+
+/* sections */
+
+
 /* section2Container */
 
-.section2OuterContainer{
+/* .section2OuterContainer{
   padding:0 100px;
-}
+} */
 .section2Container{
   flex-direction: column;
   text-align: center;
@@ -322,10 +329,10 @@ gap: 12px;
 
 /* section3 */
 
-.section3OuterContainer{
+/* .section3OuterContainer{
   padding:0 100px;
   margin-top: 16px;
-}
+} */
 
 .section3Container{
   padding: 8px;
@@ -336,60 +343,26 @@ box-sizing: border-box;
 /* justify-content: space-between; */
 }
 
-.section3Container img{
+.posters img{
   border-radius: 4px;
-  width: 32.875%;
+  
   transition: transition 0.3s, box-shadow 0.3s ease;
 
   /* margin-top: 16px; */
 }
 
-.section3Container img:hover{
-  box-shadow: 0 0 3px 5px #f1f1f2;
+.section3Container img{
+  
+  width: 32.875%;
+  
+
+  /* margin-top: 16px; */
+}
+
+ .posters img:hover{
+  box-shadow: 0 0 5px 5px #f1f1f2;
   border-radius: 4px;
   transform: scale(1.02);
   display: inline-block;
 }
 
-
-/* section4 */
-.section4{
-  margin-top: 16px;
-padding: 0 100px;
-}
-.flashSale{
-  padding:  8px;
-  color: white;
-  justify-content: space-between;
-background-color: red; 
-width: 100%;
-border-top-left-radius: 4px;
-border-top-right-radius: 4px;
-
-}
-
-.flash1{
-  font-size: 20px;
-}
-.flash3{
-  font-size: 14px;
-}
-.flash1 img{
-  color: white;
-}
-
-.flashSaleFlex{
-/* padding: 0 100px; */
-background-color: white;
-gap: 10px;
-}
-.flashSaleFlex .box{
-  display: flex;
-flex-direction: column;
-  width: 16%;
- padding: 8px;
- gap: 10px;
- transition: transition 0.3s, box-shadow 0.3s ease;
-
- /* margin-top: 10px; */
-}

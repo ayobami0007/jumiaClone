@@ -1,0 +1,150 @@
+.sixBoxTop {
+  padding: 8px;
+
+  justify-content: space-between;
+  /* gap: 8px; */
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+
+/* padding: 8px;
+border-radius: 4px;
+background-color: white;
+
+box-sizing: border-box; */
+
+/* section4 */
+/* .sectionFlash {
+  margin-top: 16px;
+  padding: 0 100px;
+} */
+.flashSale {
+  color: white;
+  background-color: red;
+}
+
+.flash1 {
+  font-size: 20px;
+}
+.flash3 {
+  font-size: 14px;
+  gap: 8px;
+  /* align-items: center; */
+}
+
+.flash1 img {
+  color: white;
+}
+
+.flashSaleFlex {
+  /* padding: 0 100px; */
+  background-color: white;
+  gap: 8px;
+  padding: 8px;
+  display: flex;
+}
+.flashSaleFlex .box {
+  display: flex;
+  flex-direction: column;
+  width: 16%;
+  padding: 8px;
+  gap: 10px;
+  transition: transition 0.3s, box-shadow 0.3s ease;
+  border-radius: 4px;
+  position: relative;
+  /* margin-top: 10px; */
+}
+
+.flashSaleFlex .box:hover {
+  box-shadow: 0 0 3px 5px #f1f1f2;
+
+  /* border-radius: 4px; */
+  transform: scale(1.02);
+}
+
+.box span {
+  background-color: pink;
+  color: orange;
+  width: 24%;
+  text-align: center;
+  font-size: 14px;
+  padding: 2px;
+  border-radius: 2px;
+  position: absolute;
+  /* top: 0; */
+  right: 0;
+}
+.boxName{
+  font-size: 13px;
+}
+
+.flashPrice {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.box div del {
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
+.itemsLeft {
+  font-size: 12px;
+  color: black;
+}
+
+.stockBar {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: gray;
+  overflow: hidden;
+}
+.stockLevel {
+  height: 100%;
+  width: 70%;
+  background-color: red;
+}
+
+
+/* limited sales */
+.Limited{
+  background-color: lightblue;
+}
+
+
+
+/* poster design 2 */
+.posterBox img{
+  width: 49.7%;
+}
+
+/* section7 BTS */
+
+
+ .section11P{
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  /* align-items: center; */
+}
+
+/* section10 TSI */
+.topSelling {
+  background-color: white;
+}
+
+/* section11 */
+.appBox{
+  font-size: 16px;
+  text-align: center;
+}
+
+
+/* AOS */
+.sameTopCol{
+  background-color:blue;
+  color: white;
+}
