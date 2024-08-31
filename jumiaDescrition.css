@@ -1,0 +1,23 @@
+.jumiaDescription{
+    padding: 12px;
+}
+
+.jumiaDescription div{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.jumiaDescription div p {
+    font-size: 12px;
+}
+
+.jumiaDescription div a{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #313133;
+}
+
+.jumiaDescription span {
+    font-weight: bold;
+}
