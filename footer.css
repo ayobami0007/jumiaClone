@@ -133,3 +133,66 @@ border-radius: 4px;
             display: flex;
             flex-direction: column;
         }
+
+.footer2{
+    
+    background-color: #313133;
+     color: white;
+    padding: 16px 100px;
+}
+.footer2Div1{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.footerFlex{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer2 h5{
+    margin-bottom: 12px;
+}
+
+.footer2 .usefulLink{
+    margin-top:12px ;
+}
+
+.footer2 a{
+    color: white;
+}
+
+.footer2 a:hover{
+    text-decoration: underline;
+}
+.jumiInter{
+    justify-content: space-between;
+}
+
+.joinPay{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 53%;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.join, .pay{
+    
+    gap: 16px;
+}
+
+.joinPay a{
+    font-size: 18px;
+}
+
+.payLink{
+    margin-top: 4px;
+   justify-content: center;
+}
+.footer2 hr{
+    border: 0;
+   border-top: 0.1px solid lightgray;
+}
