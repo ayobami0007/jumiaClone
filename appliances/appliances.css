@@ -1,0 +1,15 @@
+.homeCall h3{
+width: 100%;
+text-align: center;
+background-color: orange;
+padding: 8px;
+font-weight: 600;
+border-radius: 4px;
+color: white;
+}
+
+.homeCall h3:first-child{
+    margin-bottom: 16px;
+    background-color: white;
+    color: #313131;
+}
