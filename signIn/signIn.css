@@ -1,0 +1,75 @@
+
+body{
+    background-color: white;
+}
+.signInpage{
+   
+   flex-direction: column;
+   margin: 0 auto;
+   width: 34%;
+ gap: 32px;
+   text-align: center;
+   margin-top: 60px;
+   background-color: white;
+}
+.welcome{
+    font-size: 20px;
+    font-weight: 600;
+}
+.type{
+    font-size: 17px;
+}
+
+.emailbox{
+    width: 100%;
+    padding: 16px;
+    /* outline: 1px solid orange; */
+    /* border: 0; */
+    outline: 0;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+.emailbox:active{
+    outline: 1px solid orange;
+    border: 0;
+}
+.emailbox::placeholder{
+    font-size: 17px;
+}
+
+.continue{
+    width:34vw;
+    background-color: orange;
+    outline: 0;
+    border: 0;
+    padding: 16px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.continuing, .terms{
+    font-size:14px ;
+}
+.terms{
+    color: orange;
+text-decoration: underline;
+
+
+}
+
+
+.logFace{
+    background-color: blue;
+color: white;
+font-size: 16px;
+font-weight: 600;
+padding: 16px;
+width: 100%;
+border-radius: 4px;
+}
+
+.support{
+    font-size: 15px;
+}
