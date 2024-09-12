@@ -1,0 +1,157 @@
+.addToCart{
+    display: flex;
+    width: 74%;
+    background-color: white;
+    padding: 12px;
+    border-radius: 4px;
+    gap: 16px;
+}
+
+.addToCart .imgDiv{
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.addToCart hr{
+    border-top: 2px;
+}
+.addToCart .imgDiv p{
+    font-weight: 500;
+}
+.addToCart .imgDiv i{
+    border: 1px solid #313133;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    border-radius: 100%;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.addToCart .imgDiv .icon{
+    gap: 8px;
+
+}
+.addToCart .priceDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.addToCart .priceDiv h3{
+ font-weight: 400;
+}
+
+.addToCart .priceDiv .fa-heart{
+    color: orange;
+}
+
+.addToCart .priceDiv .productName{
+    justify-content: space-between;
+}
+
+.addToCart .priceDiv .brand{
+    font-size: 14px;
+
+}
+
+.flashSaleDiv{
+    /* padding: 8px; */
+    border: 1px solid red;
+    border-radius: 4px;
+}
+
+.flashSaleDiv .flashSaleHead{
+justify-content: space-between;
+background-color: red;
+padding: 8px;
+color: white;
+font-size: 14px;
+
+}
+
+.flashSaleDiv .flashSaleHead img{
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.flashSaleDiv .flashSalePriceItem {
+padding: 8px;
+}
+
+.flashSalePrice{
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.flashSalePrice del{
+    text-decoration: line-through;
+}
+.flashSalePrice span{
+    background-color: lightpink;
+    font-size: 14px;
+    padding: 2px;
+    color: orangered;
+    border-radius: 2px;
+}
+
+.flashSalePriceItem .flashSaleItem p{
+font-size: 12px;
+width: 20%;
+}
+
+.addToCart .shipping{
+    font-size: 12px;
+}
+
+.addToCart .shipping span{
+    font-weight: 500;
+}
+
+.addToCart .fa-star:first-child{
+    color: orange;
+}
+.addToCart .fa-star{
+    color: lightgray;
+}
+.addToCart .verified{
+    font-size: 14px;
+    
+}
+.addToCart .verified:hover{
+    text-decoration: underline;
+}
+.addToCart .addToCartBtn{
+    width: 100%;
+    color: white;
+    background-color: orange;
+    border: 0;
+    padding: 12px;
+    text-align: center;
+    display: flex;
+    border-radius: 4px;
+    gap: 180px;
+}
+
+.addToCartBtn p{
+    font-weight: 600    ;
+}
+
+.addToCart .Promotions{
+    font-size: 14px;
+    font-weight: 500;
+}
+.promotionsLink{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.promotionsLink a{
+    gap: 4px;
+    font-size: 14px;
+}
+.promotionsLink a:hover{
+    text-decoration: underline;
+}

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,31 +7,165 @@
     <link rel="stylesheet" href="signIn.css">
     <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
-    <div class="signInpage flex">
+    <!-- Email form -->
+    <div class="signInpage flex" id="email-form-container">
+        <div class="welcomText">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+            <p class="welcome">Welcome to Jumia</p>
+            <p class="type">Type your e-mail or phone number to log in or create a Jumia account.</p>
+        </div>
         <div>
-        <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
-        <p class="welcome">Welcome to Jumia</p>
-        <p class="type">Type your e-mail or phone number to log in or create a Jumia account.</p>
-    </div>
-        <input type="text" placeholder="Email or Mobile Number*" required class="emailbox">
-       <div>
-        <button type="submit" class="continue">  Continue</button>
-            <p class="continuing">By continuing you agree to Jumia’s </p>
-        <a href="#" class="terms">Terms and Conditions</a>
-    </div>
+            <form action="" id="email-form">
+                <input type="text" placeholder="Email or Mobile Number*" required class="emailbox" id="email-input">
+                <input type="text" placeholder="Password" class="emailbox" hidden>
+                <button type="submit" class="continue">Continue</button>
+            </form>
+
+            <div class="contTerms">
+                <p class="continuing">By continuing you agree to Jumia’s</p>
+                <a href="#" class="terms">Terms and Conditions</a>
+            </div>
+        </div>
         <a href="#" class="logFace">
             <i class="fa-brands fa-facebook"></i>
-
             Log in with Facebook
         </a>
         <p class="support">For further support, you may visit the Help Center or contact our customer service team.</p>
-        <a href="" style="display: flex" class="jumialogo">
+        <a href="" class="jumialogo" style="display: flex;">
             <p style="font-weight: 600; font-size: 24px">JUMIA</p>
-            <img src="/assets/starJ.png" alt="" width="20px" height="20px" style="margin-top: 6px" />
-          </a>
+            <img src="/assets/starJ.png" alt="" width="16px" height="16px" style="margin-top: 8px" />
+        </a>
     </div>
-</body>
 
+    <!-- OTP form -->
+    <div class="otp-container signInpage flex" id="otp-form" style="display: none;">
+        <div>
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+            <p class="welcome">Verify your email address</p>
+            <p class="veriMsg">We have sent a verification code to</p>
+            <span id="user-email">saratajeigbe@gmail.com</span>
+        </div>
+        <div class="otp-input flex">
+            <input type="text" id="otp-1" maxlength="1" oninput="moveToNext(this, 'otp-2')" onkeydown="validateKey(event)">
+            <input type="text" id="otp-2" maxlength="1" oninput="moveToNext(this, 'otp-3')" onkeydown="validateKey(event)">
+            <input type="text" id="otp-3" maxlength="1" oninput="moveToNext(this, 'otp-4')" onkeydown="validateKey(event)">
+            <input type="text" id="otp-4" maxlength="1" oninput="moveToNext(this, null)" onkeydown="validateKey(event)">
+        </div>
+        <button type="submit" class="continue submit-btn" id="submit-btn">Submit</button>
+        <button class="resend-btn" id="resend-btn">Request a new code</button>
+        <div class="footer">
+            <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer service team.</p>
+        </div>
+        <div class="flex">
+            <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+            <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
+        </div>
+    </div>
+
+    <script>
+        const emailFormContainer = document.getElementById('email-form-container');
+        const otpFormContainer = document.getElementById('otp-form');
+        const userEmailDisplay = document.getElementById('user-email');
+        const emailInput = document.getElementById('email-input');
+        const submitOtpButton = document.getElementById('submit-btn');
+
+        // Function to send OTP
+        function sendOTP(email) {
+            const otp = Math.floor(1000 + Math.random() * 9000);
+            console.log(`OTP for ${email} is: ${otp}`);
+            localStorage.setItem('currentOTP', otp);
+            return otp;
+        }
+
+        // Function to handle email form submission
+        document.getElementById('email-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = emailInput.value;
+
+            if (email) {
+                const userData = JSON.parse(localStorage.getItem(email));
+                if (userData) {
+                    alert('Email already registered! Proceed to login.');
+                } else {
+                    const otp = sendOTP(email);
+                    alert(`Verification code sent to ${email}`);
+
+                    userEmailDisplay.textContent = email;
+                    emailFormContainer.style.display = 'none';
+                    otpFormContainer.style.display = 'block';
+                }
+            } else {
+                alert('Please enter an email or phone number.');
+            }
+        });
+
+        // Function to handle OTP verification
+        submitOtpButton.addEventListener('click', function () {
+            const otpInput =
+                document.getElementById("otp-1").value +
+                document.getElementById("otp-2").value +
+                document.getElementById("otp-3").value +
+                document.getElementById("otp-4").value;
+
+            const storedOtp = localStorage.getItem('currentOTP');
+
+            if (otpInput === storedOtp) {
+                alert('OTP verified successfully!');
+            } else {
+                alert('Invalid OTP. Please try again.');
+            }
+        });
+
+        // Resend OTP function
+        document.getElementById('resend-btn').addEventListener('click', function () {
+            const email = emailInput.value;
+            if (email) {
+                sendOTP(email);
+                alert('A new OTP has been sent.');
+            } else {
+                alert('Please enter your email first.');
+            }
+        });
+
+        // Move to next input on digit entry and allow only numbers
+        function moveToNext(currentInput, nextInputId) {
+            const currentVal = currentInput.value;
+
+            if (isNaN(currentVal)) {
+                currentInput.value = '';
+                return;
+            }
+
+            if (currentVal.length === 1 && nextInputId) {
+                document.getElementById(nextInputId).focus();
+            }
+
+            const otp1 = document.getElementById('otp-1').value;
+            const otp2 = document.getElementById('otp-2').value;
+            const otp3 = document.getElementById('otp-3').value;
+            const otp4 = document.getElementById('otp-4').value;
+
+            if (otp1 && otp2 && otp3 && otp4) {
+                document.getElementById('submit-btn').click();
+            }
+        }
+
+        // Allow only numeric input and handle backspace
+        function validateKey(event) {
+            const key = event.key;
+
+            if (isNaN(key) && key !== 'Backspace') {
+                event.preventDefault(); 
+            }
+
+            if (key === 'Backspace' && event.target.value === '') {
+                const prevInput = event.target.previousElementSibling;
+                if (prevInput) {
+                    prevInput.focus();
+                }
+            }
+        }
+    </script>
+</body>
 </html>

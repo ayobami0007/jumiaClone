@@ -1,0 +1,32 @@
+.cartSection{
+
+}
+
+.cartBox{
+    flex-direction: column;
+    background-color: white;
+    border-radius: 4px;
+    gap: 20px;
+    padding: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+}
+
+.cartBox .cart{
+    font-weight: 600;
+}
+
+.cartBox .browse{
+    font-size: 14px;
+}
+
+.cartBox a{
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: orange;
+    padding: 16px ;
+    border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}

@@ -1,3 +1,41 @@
+.sideBarLink {
+    background-color: white;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    border-radius: 4px;
+    padding: 8px;
+    height: 380px;
+    box-sizing: border-box;
+    width: 16%;
+    position: absolute;
+    left: 7%;
+    top: 16%;
+    box-shadow: 2px 2px 3px gray;
+    z-index: 1;
+    display: none;
+  }
+
+  .sideBarLink  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .sideBarLink a {
+    color: #313133;
+  }
+  
+  .sideBarLink a:hover{
+         color: orange;
+  }
+
+.sideActive{
+    display: block;
+}
+
 .homeCall h3{
 width: 100%;
 text-align: center;
@@ -13,3 +51,8 @@ color: white;
     background-color: white;
     color: #313131;
 }
+
+.nav .fa-bars:hover{
+    color: orange;
+}
+

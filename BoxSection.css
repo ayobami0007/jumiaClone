@@ -43,6 +43,7 @@
   transition: transition 0.3s, box-shadow 0.3s ease;
   border-radius: 4px;
   position: relative;
+  color: #313133;
   /* margin-top: 10px; */
 }
 

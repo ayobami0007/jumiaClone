@@ -1,26 +1,4 @@
-let slideIndex = 0;
-showSlides(); // You need to call the function
 
-function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("imgShow");
-    let dots = document.getElementsByClassName("dot");
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }  // Fix: change `slides.index` to `slides.length`
-
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");  // Fix: add space before "active"
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";  // Fix: add space before "active"
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
 
 
 window.onscroll = function () {
@@ -76,35 +54,175 @@ let countDownInterval = setInterval(updateCountDown, 1000)
 
 
 // dropdowntoggle
-document.addEventListener('DOMContentLoaded', function(){
+// document.addEventListener('DOMContentLoaded', function(){
 
-const dropDownButton = document.querySelector(".accountsDropDown");
-const dropDownContent = document.querySelector(".dropDownContent");
-const dropDownIcon = document.getElementById("dropDownIcon");
+// const dropDownButton = document.querySelector(".accountsDropDown");
+// const dropDownContent = document.querySelector(".dropDownContent");
+// const dropDownIcon = document.getElementById("dropDownIcon");
 
-dropDownButton.addEventListener('click', function(event){
-    dropDownContent.classList.toggle('activ');
-    dropDownButton.classList.toggle('activ');
+// dropDownButton.addEventListener('click', function(event){
+//     dropDownContent.classList.toggle('activ');
+//     dropDownButton.classList.toggle('activ');
 
-    if (dropDownContent.classList.contains('activ')){
-dropDownIcon.classList.remove('fa-caret-down')
-dropDownIcon.classList.add('fa-caret-up')
+//     if (dropDownContent.classList.contains('activ')){
+// dropDownIcon.classList.remove('fa-caret-down')
+// dropDownIcon.classList.add('fa-caret-up')
+//     } else{
+//         dropDownIcon.classList.add('fa-caret-down')
+//         dropDownIcon.classList.remove('fa-caret-up')
+
+//     }
+// });
+
+// window.addEventListener('click', function(event) {
+//     if (!event.target.closest('#dropDownButton')) {
+//         if (dropDownContent.classList.contains('active')) {
+//             dropDownContent.classList.remove('active');
+//             dropDownButton.classList.remove('active');
+//             dropDownIcon.classList.remove('fa-caret-up');
+//             dropDownIcon.classList.add('fa-caret-down');
+//         }
+//     }
+// });
+
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dropDownButton = document.querySelector(".accountsDropDown");
+    const dropDownContent = document.querySelector(".dropDownContent");
+    const dropDownIcon = document.getElementById("dropDownIcon");
+
+    if (dropDownButton && dropDownContent && dropDownIcon) {
+        dropDownButton.addEventListener('click', function(event) {
+            dropDownContent.classList.toggle('activ');
+            dropDownButton.classList.toggle('activ');
+
+            if (dropDownContent.classList.contains('activ')) {
+                dropDownIcon.classList.remove('fa-caret-down');
+                dropDownIcon.classList.add('fa-caret-up');
+            } else {
+                dropDownIcon.classList.add('fa-caret-down');
+                dropDownIcon.classList.remove('fa-caret-up');
+            }
+        });
+
+        window.addEventListener('click', function(event) {
+            if (!event.target.closest('.accountsDropDown')) {
+                if (dropDownContent.classList.contains('activ')) {
+                    dropDownContent.classList.remove('activ');
+                    dropDownButton.classList.remove('activ');
+                    dropDownIcon.classList.remove('fa-caret-up');
+                    dropDownIcon.classList.add('fa-caret-down');
+                }
+            }
+        });
     } else{
-        dropDownIcon.classList.add('fa-caret-down')
-        dropDownIcon.classList.remove('fa-caret-up')
-
+        console.error("Dropdown elements not found");
     }
 });
 
-window.addEventListener('click', function(event) {
-    if (!event.target.closest('#dropdownButton')) {
-        if (dropdownContent.classList.contains('active')) {
-            dropdownContent.classList.remove('active');
-            dropdownButton.classList.remove('active');
-            dropdownIcon.classList.remove('fa-caret-up');
-            dropdownIcon.classList.add('fa-caret-down');
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const DropdownBar = document.querySelector(".fa-bars")
+//     const dropDownContent = document.querySelector(".sideBarLink")
+
+
+//     if (DropdownBar && dropDownContent){
+//         DropdownBar.addEventListener('mouseenter', function(){
+//             dropDownContent.classList.add('sideActive')
+//         })
+
+//         dropDownContent.addEventListener('mouseenter', function(){
+//             dropDownContent.classList.add('sideActive')
+//         })
+
+//         DropdownBar.addEventListener('mouseleave', function(){
+//             setTimeout(() =>{
+//                 if(!dropDownContent.matches(':hover')){
+//                     dropDownContent.classList.remove('sideActive')
+//                 }
+//             }, 100);
+//         })
+
+//         dropDownContent.addEventListener('mouseleave', function(){
+//             setTimeout(() => {
+//                 if(!DropdownBar.matches(':hover')){
+//                     dropDownContent.classList.remove(sideActive)
+//                 }
+//             }, 100)
+//         })
+//     } else {
+//         console.error("dropdown elements not found")
+//     }
+// }
+// )
+
+document.addEventListener('DOMContentLoaded', function() {
+// function setupHoverDropdown(dropDownButtonSelector, dropDownContentSelector) {
+    const dropDownButton = document.querySelector('.fa-bars');
+    const dropDownContent = document.querySelector('.sideBarLink');
+
+    if (dropDownButton && dropDownContent) {
+        let isHoveringDropdown = false;
+        let isHoveringButton = false;
+
+        // Show dropdown when hovering over button
+        dropDownButton.addEventListener('mouseenter', function() {
+            dropDownContent.classList.add('sideActive');
+            isHoveringButton = true;
+        });
+
+        // Keep dropdown open when hovering over the content
+        dropDownContent.addEventListener('mouseenter', function() {
+            dropDownContent.classList.add('sideActive');
+            isHoveringDropdown = true;
+        });
+
+        // Hide dropdown when the mouse leaves the button
+        dropDownButton.addEventListener('mouseleave', function() {
+            isHoveringButton = false;
+            setTimeout(hideDropdownIfNeeded, 100);
+        });
+
+        // Hide dropdown when the mouse leaves the content
+        dropDownContent.addEventListener('mouseleave', function() {
+            isHoveringDropdown = false;
+            setTimeout(hideDropdownIfNeeded, 100);
+        });
+
+        // Function to hide dropdown if not hovering over button or content
+        function hideDropdownIfNeeded() {
+            if (!isHoveringButton && !isHoveringDropdown) {
+                dropDownContent.classList.remove('sideActive');
+            }
         }
+    } else {
+        console.error("Dropdown elements not found for hover dropdown");
     }
-});
+}
 
-});
+)
+
+
+
+
+// sidebar link
+
+const applianceLink = document.querySelector('.applianceLink');
+ const sideSlide = document.querySelector('.sideSlide');
+const appliancesDiv = document.querySelector('.appliances');
+  const sideBar = document.querySelector('.sideBar')
+applianceLink.addEventListener('mouseover', () =>{
+    appliancesDiv.style.display = 'flex';
+    sideSlide.style.gap  = '1px'
+    sideBar.style.borderTopRightRadius = "0"
+    sideBar.style.borderBottomRightRadius = "0"
+    } )
+
+
+    applianceLink.addEventListener('mouseout', () =>{
+        appliancesDiv.style.display = 'none'
+        sideSlide.style.gap = "8px"
+         sideBar.style.borderTopRightRadius = "4px"
+    sideBar.style.borderBottomRightRadius = "4px"
+    } )
