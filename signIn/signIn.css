@@ -1,30 +1,44 @@
 
-
+body {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f1f1f2;
+    color: #313133;
+    min-height: 100%;
+    min-width: 950px;
+    /* font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; */
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-family: sans-serif;
+  }
+  a{
+    text-decoration: none;
+  }
 .signInpage{
    
    flex-direction: column;
    margin: 0 auto;
-   width: 34%;
+   width: 32%;
  gap: 32px;
    text-align: center;
    margin-top: 60px;
    /* background-color: white; */
 }
 
-.welcomText{
-    display: flex;
+.welcomPar{
+    /* display: flex;
     flex-direction: column;
     gap: 8px;
-    align-items: center;
+    align-items: center; */
 
 }
 .welcome{
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 600;
     color: black;
 }
 .type{
     font-size: 17px;
+    width: 34vw;
 }
 
 .emailbox{
@@ -58,9 +72,7 @@
     cursor: pointer;
 }
 
-.contTerms{
-    margin-top: 4px;
-}
+
 
 .continuing, .terms{
     font-size:14px ;
@@ -79,8 +91,10 @@ color: white;
 font-size: 16px;
 font-weight: 600;
 padding: 16px;
-width: 100%;
+width: 34vw;
+border: none;
 border-radius: 4px;
+cursor: pointer;
 }
 
 .support{
@@ -139,132 +153,115 @@ border: 2px solid orange;
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="signIn.css">
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-    <div class="signInpage flex" id="email-form-container">
-        <div class="welcomText">
-            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
-            <p class="welcome">Welcome to Jumia</p>
-            <p class="type">Type your e-mail or phone number to log in or create a Jumia account.</p>
-        </div>
-        <div>
-            <form action="" id="email-form">
-                <input type="text" placeholder="Email or Mobile Number*" required class="emailbox" id="email-input">
-                <input type="text" placeholder="Password" class="emailbox" hidden>
-                <button type="submit" class="continue">Continue</button>
-            </form>
 
-            <div class="contTerms">
-                <p class="continuing">By continuing you agree to Jumia’s</p>
-                <a href="#" class="terms">Terms and Conditions</a>
-            </div>
-        </div>
-        <a href="#" class="logFace">
-            <i class="fa-brands fa-facebook"></i>
-            Log in with Facebook
-        </a>
-        <p class="support">For further support, you may visit the Help Center or contact our customer service team.</p>
-        <a href="" class="jumialogo" style="display: flex;">
-            <p style="font-weight: 600; font-size: 24px">JUMIA</p>
-            <img src="/assets/starJ.png" alt="" width="16px" height="16px" style="margin-top: 8px" />
-        </a>
-    </div>
 
-    <div class="otp-container signInpage flex welcomText" id="otp-form" style="display: none;">
-        <div>
-            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
-            <p class="welcome">Verify your email address</p>
-            <p class="veriMsg">We have sent a verification code to</p>
-            <span id="user-email">saratajeigbe@gmail.com</span>
-        </div>
-        <div class="otp-input flex ">
-            <input type="text" id="otp-1" maxlength="1">
-            <input type="text" id="otp-2" maxlength="1">
-            <input type="text" id="otp-3" maxlength="1">
-            <input type="text" id="otp-4" maxlength="1">
-        </div>
-        <button type="submit" class="continue submit-btn" id="submit-btn">Submit</button>
-        <button class="resend-btn" id="resend-btn">Request a new code</button>
-        <div class="footer">
-            <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer
-                service team.</p>
-        </div>
-        <div class="flex jumialogo">
-            <p style="font-weight: 600; font-size: 24px">JUMIA</p>
-            <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
-        </div>
-    </div>
 
-    <script>
-        const emailFormContainer = document.getElementById('email-form-container');
-        const otpFormContainer = document.getElementById('otp-form');
-        const userEmailDisplay = document.getElementById('user-email');
-        const emailInput = document.getElementById('email-input');
-        const submitOtpButton = document.getElementById('submit-btn');
 
-        function sendOTP(email) {
-            const otp = Math.floor(1000 + Math.random() * 9000);
-            console.log(`OTP for ${email} is: ${otp}`);
-            localStorage.setItem('currentOTP', otp);
-            return otp;
-        }
 
-        document.getElementById('email-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const email = emailInput.value;
 
-            if (email) {
-                const userData = JSON.parse(localStorage.getItem(email));
-                if (userData) {
-                    alert('Email already registered! Proceed to login.');
-                } else {
-                    const otp = sendOTP(email);
-                    alert(`Verification code sent to ${email}`);
 
-                    userEmailDisplay.textContent = email;
-                    emailFormContainer.style.display = 'none';
-                    otpFormContainer.style.display = 'block';
-                }
-            } else {
-                alert('Please enter an email or phone number.');
-            }
-        });
+/* Personal Details Step */
+.personalDetailsText {
+    text-align: center;
+    margin: 20px 0;
+}
 
-        submitOtpButton.addEventListener('click', function () {
-            const otpInput =
-                document.getElementById("otp-1").value +
-                document.getElementById("otp-2").value +
-                document.getElementById("otp-3").value +
-                document.getElementById("otp-4").value;
+.personalDetailsText .welcome {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
 
-            const storedOtp = localStorage.getItem('currentOTP');
+.personalDetailsText .type {
+    font-size: 16px;
+    color: #555;
+}
 
-            if (otpInput === storedOtp) {
-                alert('OTP verified successfully!');
-            } else {
-                alert('Invalid OTP. Please try again.');
-            }
-        });
+.inputbox {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
 
-        document.getElementById('resend-btn').addEventListener('click', function () {
-            const email = emailInput.value;
-            if (email) {
-                sendOTP(email);
-                alert('A new OTP has been sent.');
-            } else {
-                alert('Please enter your email first.');
-            }
-        });
+.select-container,
+.date-container {
+    margin: 10px 0;
+}
 
-        
-    </script>
-</body>
-</html>
+.select-container label,
+.date-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.terms-container {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.terms-container input {
+    margin-right: 10px;
+}
+
+.checkBtn {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: not-allowed;
+    display: block;
+    margin: 20px auto;
+}
+
+.checkBtn.active {
+    background-color: orange;
+    cursor: pointer;
+}
+
+.checkBtn:hover.active {
+    background-color: darkorange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add this to your signIn.css file */
+#step6 {
+    text-align: center;
+}
+
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.register {
+    background-color: gray;
+}
+
+.register.active {
+    background-color: orange;
+}
+
