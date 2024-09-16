@@ -7,145 +7,168 @@
     <title>Multi-Step Form with OTP</title>
     <script src="https://kit.fontawesome.com/5e820e8517.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="signIn.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <div class="form-container">
+    <!-- <div class="form-container"> -->
 
-        <!-- Email/Phone Step -->
-        <div class="signInpage flex step" id="step1">
-            <div class="welcomPar">
-                <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
-                <h3 class="welcome">Welcome to Jumia</h3>
-                <p class="type">Type your e-mail or phone number to log in or create a Jumia account.</p>
-            </div>
-            <input type="text" placeholder="Email or Mobile Number*" required class="emailbox" id="email-input">
-            <button type="button" class="continue" id="continue-email" onclick="validateEmailOrPhone()">Continue</button>
+    <!-- Email/Phone Step -->
+    <div class="signInpage flex  step" id="step1">
+        <div class="welcomePar flex">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" />
+            <h3 class="welcome">Welcome to Jumia</h3>
+            <p class="type">Type your e-mail or phone number to log in or create a Jumia account.</p>
+        </div>
+        <input type="text" placeholder="Email or Mobile Number*" required class="emailbox" id="email-input">
+        <div class="contTermsBtn">
+            <button type="button" class="continue" id="continue-email"
+                onclick="validateEmailOrPhone()">Continue</button>
             <div class="contTerms">
                 <p class="continuing">By continuing you agree to Jumia’s</p>
                 <a href="#" class="terms">Terms and Conditions</a>
             </div>
-            <button class="logFace">
-                <i class="fa-brands fa-square-facebook"></i>
-                Log in with Facebook
-            </button>
-            <p class="support">For further support, you may visit the Help Center or contact our customer service team.</p>
-            <a href="" class="jumialogo" style="display: flex;">
-                <p style="font-weight: 600; font-size: 24px">JUMIA</p>
-                <img src="/assets/starJ.png" alt="" width="16px" height="16px" style="margin-top: 28px" />
-            </a>
         </div>
+        <button class="logFace flex">
+            <i class="fa-brands fa-square-facebook"></i>
+            Log in with Facebook
+        </button>
+        <p class="support">For further support, you may visit the Help Center or contact our customer service team.</p>
+        <div href="" class="jumialogo">
+            <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+            <img src="/assets/starJ.png" alt="" width="16px" height="16px" style="margin-top:4px" />
+        </div>
+    </div>
 
-        <!-- OTP form -->
-        <div class="otp-container signInpage flex step" id="step2" style="display: none;">
+    <!-- OTP form -->
+    <div class="signInpage  step" id="step2" style="display: none;">
+        <div class="welcomePar flex">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+            <h3>Verify your email address</h3>
             <div>
-                <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
-                <p class="welcome">Verify your email address</p>
-                <p class="veriMsg">We have sent a verification code to</p>
+                <p class="type">We have sent a verification code to</p>
                 <span id="user-email">saratajeigbe@gmail.com</span>
             </div>
+
+        </div>
+        <div class="formSec">
             <div class="otp-input flex">
-                <input type="text" id="otp-1" maxlength="1" oninput="moveToNext(this, 'otp-2')" onkeydown="validateKey(event)">
-                <input type="text" id="otp-2" maxlength="1" oninput="moveToNext(this, 'otp-3')" onkeydown="validateKey(event)">
-                <input type="text" id="otp-3" maxlength="1" oninput="moveToNext(this, 'otp-4')" onkeydown="validateKey(event)">
+                <input type="text" id="otp-1" maxlength="1" oninput="moveToNext(this, 'otp-2')"
+                    onkeydown="validateKey(event)">
+                <input type="text" id="otp-2" maxlength="1" oninput="moveToNext(this, 'otp-3')"
+                    onkeydown="validateKey(event)">
+                <input type="text" id="otp-3" maxlength="1" oninput="moveToNext(this, 'otp-4')"
+                    onkeydown="validateKey(event)">
                 <input type="text" id="otp-4" maxlength="1" oninput="verifyOTP()" onkeydown="validateKey(event)">
             </div>
+
+            <button type="button" class="continue" id="continue-email" onclick="validateKey(event)">Submit</button>
+
             <button class="resend-btn" id="resend-btn" onclick="generateOTP()">Request a new code</button>
-            <div class="footer">
-                <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer service team.</p>
-            </div>
+            <!-- <div > -->
+            <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer
+                service
+                team.</p>
+            <!-- </div> -->
             <div class="flex">
                 <p style="font-weight: 600; font-size: 24px">JUMIA</p>
                 <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
             </div>
         </div>
+    </div>
 
-        <!-- Password Step -->
-        <div class="signInpage flex step" id="step3" style="display: none;">
-            <div class="welcomText">
-                <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
-                <p class="welcome">Create Your Password</p>
-                <p class="type">Type your password to complete your Jumia account.</p>
-            </div>
-            <div>
+    <!-- Password Step -->
+    <div class="signInpage flex step" id="step3" style="display: none;">
+        <div class="welcomePar">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+            <p class="welcome">Create Your Password</p>
+            <p class="type">Type your password to complete your Jumia account.</p>
+        </div>
+        <div class="formSec ">
+            <div style="display: flex; width: 100%;">
                 <input type="text" id="email-display" class="emailbox" disabled>
-                <a href="#" onclick="previousStep(1)">Edit</a>
+                <a href="#" onclick="previousStep(1)" style="display: inline-block;">Edit</a>
             </div>
             <input type="password" placeholder="Password" class="emailbox" id="password-input">
             <input type="password" placeholder="Confirm Password" class="emailbox" id="confirm-password-input">
-            <button type="button" class="continue" id="continue-password" onclick="validatePasswords()">Continue</button>
+            <button type="button" class="continue" id="continue-password"
+                onclick="validatePasswords()">Continue</button>
+        </div>
+    </div>
+
+
+    <!-- Personal Details Step -->
+    <div class="signInpage flex step" id="step4" style="display: none;">
+        <div class="welcomText">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+            <p class="welcome">Personal Details</p>
+            <p class="type">Fill in your personal details to complete your registration.</p>
+        </div>
+        <input type="text" placeholder="First Name*" class="emailbox" id="first-name">
+        <input type="text" placeholder="Last Name*" class="emailbox" id="last-name">
+        <div class="phone-container flex">
+            <select id="country-code" class="emailbox">
+                <option value="+1">+1 (USA)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+91">+91 (India)</option>
+                <!-- Add more country codes as needed -->
+            </select>
+            <input type="text" placeholder="Phone Number*" class="emailbox" id="phone-number">
+        </div>
+        <button type="button" class="continue" id="continue-personal" onclick="validateStep4Details()">Continue</button>
+    </div>
+
+    <!-- Personal Details Step 5 -->
+    <div class="signInpage flex step" id="step5" style="display: none;">
+        <div class="personalDetailsText">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+            <p class="welcome">Personal Details</p>
+            <p class="type">Please fill in your personal details to complete your registration.</p>
         </div>
 
-        <!-- Personal Details Step -->
-        <div class="signInpage flex step" id="step4" style="display: none;">
-            <div class="welcomText">
-                <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
-                <p class="welcome">Personal Details</p>
-                <p class="type">Fill in your personal details to complete your registration.</p>
-            </div>
-            <input type="text" placeholder="First Name*" class="emailbox" id="first-name">
-            <input type="text" placeholder="Last Name*" class="emailbox" id="last-name">
-            <div class="phone-container flex">
-                <select id="country-code" class="emailbox">
-                    <option value="+1">+1 (USA)</option>
-                    <option value="+44">+44 (UK)</option>
-                    <option value="+91">+91 (India)</option>
-                    <!-- Add more country codes as needed -->
-                </select>
-                <input type="text" placeholder="Phone Number*" class="emailbox" id="phone-number">
-            </div>
-            <button type="button" class="continue" id="continue-personal" onclick="validateStep4Details()">Complete Registration</button>
+        <!-- Gender Selection -->
+        <div class="select-container">
+            <label for="gender">Gender*</label>
+            <select id="gender" class="inputbox">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
         </div>
 
-        <!-- Personal Details Step 5 -->
-        <div class="signInpage flex step" id="step5" style="display: none;">
-            <div class="personalDetailsText">
-                <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
-                <p class="welcome">Personal Details</p>
-                <p class="type">Please fill in your personal details to complete your registration.</p>
-            </div>
-
-            <!-- Gender Selection -->
-            <div class="select-container">
-                <label for="gender">Gender*</label>
-                <select id="gender" class="inputbox">
-                    <option value="">Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <!-- Date of Birth -->
-            <div class="date-container">
-                <label for="dob">Date of Birth*</label>
-                <input type="date" id="dob" class="inputbox">
-            </div>
-
-            <!-- Terms and Conditions Checkbox -->
-            <div class="terms-container">
-                <input type="checkbox" id="terms-checkbox" onclick="toggleContinueButton()">
-                <label for="terms-checkbox">I have read and agree to the Terms and Conditions</label>
-            </div>
-            <button type="button" class="continue checkBtn" id="continue-personal-step5" onclick="validateStep5Details()">Continue</button>
-            <div class="footer">
-                <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer service team.</p>
-            </div>
-            <div class="flex">
-                <p style="font-weight: 600; font-size: 24px">JUMIA</p>
-                <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
-            </div>
+        <!-- Date of Birth -->
+        <div class="date-container">
+            <label for="dob">Date of Birth*</label>
+            <input type="date" id="dob" class="inputbox">
         </div>
 
-        <!-- Confirmation Step -->
-        <div class="signInpage flex step" id="step6" style="display: none;">
-            <div class="confirmationText">
-                <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
-                <p class="welcome">Registration Complete</p>
-                <p class="type">You will be redirected to the homepage in <span id="timer">30</span> seconds.</p>
-                <button type="button" class="register" id="getStartedButton" disabled>Get Started</button>
-            </div>
+        <!-- Terms and Conditions Checkbox -->
+        <div class="terms-container">
+            <input type="checkbox" id="terms-checkbox" onclick="toggleContinueButton()">
+            <label for="terms-checkbox">I have read and agree to the Terms and Conditions</label>
         </div>
+        <button type="button" class="continue checkBtn" id="continue-personal-step5"
+            onclick="validateStep5Details()">Continue</button>
+        <div class="footer">
+            <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer
+                service team.</p>
+        </div>
+        <div class="flex">
+            <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+            <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
+        </div>
+    </div>
+
+    <!-- Confirmation Step -->
+    <div class="signInpage flex step" id="step6" style="display: none;">
+        <div class="confirmationText">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+            <p class="welcome">Registration Complete</p>
+            <p class="type">You will be redirected to the homepage in <span id="timer">30</span> seconds.</p>
+            <button type="button" class="register" id="getStartedButton" disabled>Get Started</button>
+        </div>
+    </div>
 
     </div>
 
@@ -167,6 +190,8 @@
                 userEmail = emailInput;
                 document.getElementById("user-email").textContent = userEmail;
                 showStep(2);
+                document.getElementById("step2").classList.add("signInpage");
+
                 generateOTP();
             } else {
                 alert("Please enter a valid email or phone number.");
