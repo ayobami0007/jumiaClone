@@ -103,11 +103,12 @@ a {
   text-align: center;
   /* margin-top: 80px; */
   gap: 28px;
+  margin-top: 32px;
   /* background-color: white; */
 }
 
 .otp-input {
-  margin-top: 32px;
+  /* margin-top: 32px; */
   gap: 16px;
   justify-content: center;
 }
@@ -144,10 +145,51 @@ a {
   font-size: 16px;
 }
 
-.footer {
-  margin-top: 40px;
-  margin-bottom: 20px;
+.email-display{
+    display: flex;
+    justify-content: space-between;
 }
+#email-display{
+    border: 0;
+    outline: 0;
+    background:none ;
+    font-size: 18px;
+    /* gap: 50px; */
+    /* align-items: center; */
+
+    /* justify-content: space-between; */
+}
+
+.footer {
+margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.phone-container {
+    width: 100%;
+  }
+
+#country-code {
+    width: 40%;
+    padding: 16px;
+    /* outline: 1px solid orange; */
+    /* border: 0; */
+    outline: 0;
+    border: 1px solid gray;
+    border-radius: 4px;
+    /* margin-bottom: 32px; */
+  }
+#phone-number{
+    width: 60%;
+    padding: 16px;
+    /* outline: 1px solid orange; */
+    /* border: 0; */
+    outline: 0;
+    border: 1px solid gray;
+    border-radius: 4px;   
+}
+  
 
 /* Personal Details Step */
 .personalDetailsText {
@@ -166,16 +208,11 @@ a {
   color: #555;
 }
 
-.inputbox {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
+
 
 .select-container,
 .date-container {
+    width: 100%;
   margin: 10px 0;
 }
 
@@ -187,9 +224,10 @@ a {
 }
 
 .terms-container {
-  margin: 20px 0;
+  /* margin: 20px 0; */
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .terms-container input {
@@ -205,6 +243,12 @@ a {
   cursor: not-allowed;
   display: block;
   margin: 20px auto;
+  padding: 16px;
+  outline: 0;
+  
+  font-size: 16px;
+  font-weight: 600;
+  /* cursor: pointer; */
 }
 
 .checkBtn.active {
@@ -228,9 +272,12 @@ a {
 }
 
 .register {
+    cursor: not-allowed;
   background-color: gray;
 }
 
 .register.active {
+    cursor: pointer;
+    color: white;
   background-color: orange;
 }

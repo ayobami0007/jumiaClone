@@ -15,3 +15,722 @@
     </section>
 </body>
 </html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="signIn.css">
+</head>
+
+<body>
+    <!-- Password Step -->
+    <form action="javascript:void(0);">
+        <div class="signInpage flex step" id="step3">
+            <div class="welcomePar flex">
+                <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+                <h3> Welcome back!</h3>
+                <p class="type">Log back into your account</p>
+            </div>
+            <div class="formSec ">
+                <div class="emailbox email-display">
+                    <input type="text" id="email-display" disabled>
+                    <a href="#" onclick="previousStep(1)">Edit</a>
+                </div>
+                <input type="password" placeholder="Password" class="emailbox" id="password-input"
+                    autocomplete="current-password">
+                <button type="button" class="continue" id="logBtn" onclick="login()">Continue</button>
+                <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer
+                    service team.</p>
+                <div class="flex">
+                    <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+                    <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
+                </div>
+            </div>
+        </div>
+        <!-- OTP form -->
+    <div class="signInpage  step" id="step2" style="display: none;">
+        <div class="welcomePar flex">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+            <h3>Verify your email address</h3>
+            <div>
+                <p class="type">We have sent a verification code to</p>
+                <span id="user-email">saratajeigbe@gmail.com</span>
+            </div>
+
+        </div>
+        <div class="formSec">
+            <div class="otp-input flex">
+                <input type="text" id="otp-1" maxlength="1" oninput="moveToNext(this, 'otp-2', null)"
+                    onkeydown="validateKey(event)">
+                <input type="text" id="otp-2" maxlength="1" oninput="moveToNext(this, 'otp-3', 'otp-1')"
+                    onkeydown="validateKey(event)">
+                <input type="text" id="otp-3" maxlength="1" oninput="moveToNext(this, 'otp-4', 'otp-2')"
+                    onkeydown="validateKey(event)">
+                <input type="text" id="otp-4" maxlength="1" oninput="verifyOTP(); moveToNext(this, null, 'otp-3')"
+                    onkeydown="validateKey(event)">
+            </div>
+
+            <button type="button" class="continue" id="continue-email" onclick="validateKey(event)">Submit</button>
+
+            <button class="resend-btn" id="resend-btn" onclick="generateOTP()">Request a new code</button>
+            <!-- <div > -->
+            <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer
+                service
+                team.</p>
+            <!-- </div> -->
+            <div class="flex">
+                <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+                <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <script>
+        let generatedOTP;
+        // Get the email from localStorage and prefill the email field
+        const emailInput = document.getElementById("email-display");
+        const storedEmail = localStorage.getItem('EmailOrPhone'); // The email stored in localStorage
+
+        if (storedEmail) {
+            emailInput.value = storedEmail;
+        }
+
+        function login() {
+            const emailInputValue = storedEmail; // Use the stored email since the input is disabled
+            const passwordInputValue = document.getElementById('password-input').value;
+
+            // Fetch registered users from localStorage
+            const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
+            // Find the user by email
+            const user = registeredUsers.find(user => user.email === emailInputValue);
+
+            if (user) {
+                if (user.password === passwordInputValue) {
+                    alert("Password is correct! Sending OTP...");
+                    generateOTP(); // Simulate sending OTP to user
+                    showStep(2);
+                    // Proceed to OTP verification step (implement step switching logic)
+                } else {
+                    alert("Incorrect password. Please try again.");
+                }
+            } else {
+                alert("No account found with this email.");
+            }
+        }
+
+        function generateOTP() {
+            // Simulate OTP generation and sending logic
+            alert("OTP sent to your registered email!");
+        }
+
+        // Example of previousStep function (you can customize it)
+        function previousStep(stepNumber) {
+            alert("Going back to step " + stepNumber);
+            // Logic to go back to the previous step (step 1)
+        }
+
+        function generateOTP() {
+    generatedOTP = Math.floor(1000 + Math.random() * 9000); // Generates a random 4-digit OTP
+    localStorage.setItem('Generated OTP', generatedOTP)
+    console.log('Generated OTP:', generatedOTP); // Logs the OTP to the console (for development/testing purposes)
+    alert(`Your OTP is ${generatedOTP}`);
+}
+
+function verifyOTP() {
+    const otp = document.getElementById("otp-1").value + document.getElementById("otp-2").value +
+        document.getElementById("otp-3").value + document.getElementById("otp-4").value;
+    if (otp == generatedOTP) {
+        document.getElementById("email-display").value = userEmail;
+        alert("otp verified succesfully")
+        window.location.href = "/index.html";
+    } else {
+        alert("Invalid OTP. Please try again.");
+    }
+}
+
+// Show the step by hiding others
+function showStep(stepNumber) {
+    const steps = document.getElementsByClassName("step");
+    for (let i = 0; i < steps.length; i++) {
+        steps[i].style.display = "none";
+    }
+    document.getElementById(`step${stepNumber}`).style.display = "block";
+}
+
+// Move to the next OTP input box
+function moveToNext(currentInput, nextInputId, prevInputId) {
+
+    if (currentInput.value.length === currentInput.maxLength) {
+        if (nextInputId) {
+            document.getElementById(nextInputId).focus();
+        }
+    }
+
+    currentInput.addEventListener('keydown', function (e) {
+        const currentInputValue = currentInput.value
+        if (e.key === 'Backspace') {
+            if (currentInputValue.length > 0) {
+                currentInput.value = '';
+                e.preventDefault();
+            } else if (prevInputId) {
+                document.getElementById(prevInputId).focus();
+            }
+        }
+    })
+}
+
+function validateKey(event) {
+    const key = event.key;
+    if (!/^\d$/.test(key)) {
+        event.preventDefault();
+    }
+}
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="signIn.css">
+</head>
+
+<body>
+    <!-- Password Step -->
+    <form action="javascript:void(0);">
+        <div class="signInpage flex step" id="step3">
+            <div class="welcomePar flex">
+                <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+                <h3> Welcome back!</h3>
+                <p class="type">Log back into your account</p>
+            </div>
+            <div class="formSec">
+                <div class="emailbox email-display">
+                    <input type="text" id="email-display" disabled>
+                    <a href="#" onclick="previousStep(1)">Edit</a>
+                </div>
+                <input type="password" placeholder="Password" class="emailbox" id="password-input"
+                    autocomplete="current-password">
+                <button type="button" class="continue" id="logBtn" onclick="login()">Continue</button>
+                <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer
+                    service team.</p>
+                <div class="flex">
+                    <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+                    <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
+                </div>
+            </div>
+        </div>
+
+        <!-- OTP form -->
+        <div class="signInpage step" id="step2" style="display: none;">
+            <div class="welcomePar flex">
+                <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+                <h3>Verify your email address</h3>
+                <div>
+                    <p class="type">We have sent a verification code to</p>
+                    <span id="user-email"></span>
+                </div>
+            </div>
+            <div class="formSec">
+                <div class="otp-input flex">
+                    <input type="text" id="otp-1" maxlength="1" oninput="moveToNext(this, 'otp-2', null)"
+                        onkeydown="validateKey(event)">
+                    <input type="text" id="otp-2" maxlength="1" oninput="moveToNext(this, 'otp-3', 'otp-1')"
+                        onkeydown="validateKey(event)">
+                    <input type="text" id="otp-3" maxlength="1" oninput="moveToNext(this, 'otp-4', 'otp-2')"
+                        onkeydown="validateKey(event)">
+                    <input type="text" id="otp-4" maxlength="1" oninput="verifyOTP(); moveToNext(this, null, 'otp-3')"
+                        onkeydown="validateKey(event)">
+                </div>
+                <button type="button" class="continue" id="continue-email" onclick="verifyOTP()">Submit</button>
+                <button class="resend-btn" id="resend-btn" onclick="generateOTP()">Request a new code</button>
+                <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer
+                    service team.</p>
+                <div class="flex">
+                    <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+                    <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        let generatedOTP;
+        // Prefill the email field and handle login
+        const emailInput = document.getElementById("email-display");
+        const userEmailSpan = document.getElementById("user-email");
+        const storedEmail = localStorage.getItem('EmailOrPhone');
+
+        if (storedEmail) {
+            emailInput.value = storedEmail;
+            userEmailSpan.textContent = storedEmail;  // Update the email in OTP step
+        }
+
+        function login() {
+            const passwordInputValue = document.getElementById('password-input').value;
+            const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+            const user = registeredUsers.find(user => user.email === storedEmail);
+
+            if (user) {
+                if (user.password === passwordInputValue) {
+                    alert("Password is correct! Sending OTP...");
+                    generateOTP();  // Send OTP
+                    console.log('Generated OTP:', generatedOTP); 
+                    showStep(2);    // Show OTP step
+                } else {
+                    alert("Incorrect password. Please try again.");
+                }
+            } else {
+                alert("No account found with this email.");
+            }
+        }
+
+        function generateOTP() {
+            generatedOTP = Math.floor(1000 + Math.random() * 9000); // Generate random OTP
+            localStorage.setItem('GeneratedOTP', generatedOTP);  // Store OTP for verification
+            console.log('Generated OTP:', generatedOTP); 
+            alert(`Your OTP is ${generatedOTP}`);  // Display OTP for demo (in real scenario, send via email/SMS)
+        }
+
+        function verifyOTP() {
+            const otp = document.getElementById("otp-1").value + document.getElementById("otp-2").value +
+                document.getElementById("otp-3").value + document.getElementById("otp-4").value;
+            const storedOTP = localStorage.getItem('GeneratedOTP');
+
+            if (otp == storedOTP) {
+                alert("OTP verified successfully");
+                window.location.href = "/index.html";  // Redirect to homepage after verification
+            } else {
+                alert("Invalid OTP. Please try again.");
+            }
+        }
+
+        // Helper functions to handle OTP input behavior
+        function moveToNext(currentInput, nextInputId, prevInputId) {
+            if (currentInput.value.length === currentInput.maxLength && nextInputId) {
+                document.getElementById(nextInputId).focus();
+            }
+
+            currentInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Backspace' && prevInputId && currentInput.value === '') {
+                    document.getElementById(prevInputId).focus();
+                }
+            });
+        }
+
+        function validateKey(event) {
+            const key = event.key;
+            if (!/^\d$/.test(key)) {
+                event.preventDefault();
+            }
+        }
+
+        function showStep(stepNumber) {
+            const steps = document.getElementsByClassName("step");
+            for (let i = 0; i < steps.length; i++) {
+                steps[i].style.display = "none";
+            }
+            document.getElementById(`step${stepNumber}`).style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <script> */}
+
+
+    let generatedOTP;
+    let userEmail;
+    let userName = "";
+    
+    // Function to generate a 4-digit OTP
+    function generateOTP() {
+        generatedOTP = Math.floor(1000 + Math.random() * 9000); // Generates a random 4-digit OTP
+        localStorage.setItem('Generated OTP', generatedOTP)
+        console.log('Generated OTP:', generatedOTP); // Logs the OTP to the console (for development/testing purposes)
+        alert(`Your OTP is ${generatedOTP}`);
+    }
+    
+    // Validate email or phone number and move to Step 2
+    function validateEmailOrPhone() {
+        const emailInput = document.getElementById("email-input").value;
+    
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isValidEmail = emailPattern.test(emailInput);
+    
+        const isValidPhone = emailInput.length >= 10;
+        // const storedEmail = JSON.parse(localStorage.getItem('registeredUsers'))?.email;
+        const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+        //  const storedEmail = localStorage.getItem('EmailOrPhone')
+    
+        if (isValidEmail || isValidPhone) {
+            userEmail = emailInput;
+            if(registeredUsers === userEmail){
+                window.location.href = 'logIn.html'
+            } else {
+                localStorage.setItem('EmailOrPhone', userEmail);
+                document.getElementById("user-email").textContent =  userEmail ;
+                showStep(2);
+                generateOTP();
+            }
+           
+    
+        } else {
+            alert("Please enter a valid email or phone number.");
+        }
+    }
+    
+    // Function to verify the OTP and move to Step 3
+    function verifyOTP() {
+        const otp = document.getElementById("otp-1").value + document.getElementById("otp-2").value +
+            document.getElementById("otp-3").value + document.getElementById("otp-4").value;
+        if (otp == generatedOTP) {
+            document.getElementById("email-display").value = userEmail;
+            alert("otp verified succesfully")
+            showStep(3);
+        } else {
+            alert("Invalid OTP. Please try again.");
+        }
+    }
+    
+    // Validate passwords and move to Step 4
+    function validatePasswords() {
+        const password = document.getElementById("password-input").value;
+        const confirmPassword = document.getElementById("confirm-password-input").value;
+        const isPasswordStrong = password.length >= 8 &&
+            /[A-Z]/.test(password) &&
+            /[a-z]/.test(password) &&
+            /[0-9]/.test(password);
+            
+            // &&
+            // /[!@#$%^&*]/.test(password);
+    
+    
+        
+        if (password && confirmPassword && password === confirmPassword && isPasswordStrong) {
+            localStorage.setItem('password', password)
+            showStep(4);
+        } else if (!isPasswordStrong) {
+            alert("Password must be at least 8 characters long and include uppercase letters, lowercase letters, numbers");
+        }else{
+            alert("Passwords do not match.");
+        }
+    }
+    
+    // Validate personal details in Step 4 and move to Step 5
+    function validateStep4Details() {
+        const firstName = document.getElementById("first-name").value;
+        const lastName = document.getElementById("last-name").value;
+        const phoneNumber = document.getElementById("phone-number").value;
+    
+        if (firstName && lastName && phoneNumber) {
+            localStorage.setItem('name', firstName)
+            localStorage.setItem('lastname', lastName)
+            localStorage.setItem('phoneNumber', phoneNumber)
+            showStep(5);
+        } else {
+            alert("Please fill in all the required details.");
+        }
+    }
+    
+    // Validate personal details in Step 5 and move to Step 6
+    
+    
+    function validateStep5Details() {
+        const gender = document.getElementById("gender").value;
+        const dob = document.getElementById("dob").value;
+        const termsCheckbox = document.getElementById("terms-checkbox").checked;
+        const Name = document.getElementById("name");
+        Name.textContent = `${userName} !`;
+        if (gender && dob && termsCheckbox) {
+            localStorage.setItem('gender', gender)
+            localStorage.setItem('dob',dob)
+            showStep(6);
+    
+            startTimer(); // Start the timer for Step 6
+    
+        } else {
+            alert("Please complete all required fields and agree to the terms.");
+        }
+    
+        if (termsCheckbox) {
+            document.querySelector(".checkBtn").classList.add("active");
+        } else {
+            document.querySelector(".checkBtn").classList.remove("active")
+        }
+    }
+    
+    // Function to toggle the "Continue" button in Step 5 based on the terms checkbox
+    function toggleContinueButton() {
+    
+        const termsCheckbox = document.getElementById("terms-checkbox").checked;
+        const continueButton = document.getElementById("continue-personal-step5");
+    
+        continueButton.disabled = !termsCheckbox;
+    
+        if (termsCheckbox) {
+            continueButton.classList.add("active");
+        } else {
+            continueButton.classList.remove("active");
+        }
+    }
+    
+    // Show the step by hiding others
+    function showStep(stepNumber) {
+        const steps = document.getElementsByClassName("step");
+        for (let i = 0; i < steps.length; i++) {
+            steps[i].style.display = "none";
+        }
+        document.getElementById(`step${stepNumber}`).style.display = "block";
+    }
+    
+    // Move to the next OTP input box
+    function moveToNext(currentInput, nextInputId, prevInputId) {
+    
+        if (currentInput.value.length === currentInput.maxLength) {
+            if (nextInputId) {
+                document.getElementById(nextInputId).focus();
+            }
+        }
+    
+        currentInput.addEventListener('keydown', function (e) {
+            const currentInputValue = currentInput.value
+            if (e.key === 'Backspace') {
+                if (currentInputValue.length > 0) {
+                    currentInput.value = '';
+                    e.preventDefault();
+                } else if (prevInputId) {
+                    document.getElementById(prevInputId).focus();
+                }
+            }
+        })
+    }
+    // Timer and redirect for Step 6
+    function startTimer() {
+        let timeLeft = 30; // Countdown from 30 seconds
+        const register = document.querySelector(".register");
+        const timerElement = document.getElementById("timer");
+        const password = document.getElementById("password-input").value;
+        const firstName = localStorage.getItem('name');
+        const lastName = localStorage.getItem('lastname');
+    
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = `${timeLeft} `;
+    
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                register.classList.add("active");
+    
+                // Store registered user details
+                const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+                registeredUsers.push({
+                    email: userEmail,
+                    password: password,
+                    name: `${firstName} ${lastName}`
+                });
+    
+                localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+                window.location.href = "/index.html"; // Redirect to index.html when timer reaches 0
+            }
+        }, 1000);
+    }
+    
+    
+    
+    // username
+    document.getElementById("first-name").addEventListener("input", function () {
+        userName = this.value
+    })
+    // Validate only numbers in OTP input fields
+    function validateKey(event) {
+        const key = event.key;
+        if (!/^\d$/.test(key)) {
+            event.preventDefault();
+        }
+    }
+    // </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="signIn.css">
+    <style>
+        /* Add your CSS styling here */
+    </style>
+</head>
+<body>
+    <div id="login-page" class="signInpage flex  step">
+        <!-- <h1>Login</h1> -->
+        <div class="welcomePar flex">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" />
+            <h3 class="welcome">Welcome to Jumia</h3>
+            <p class="type">Type your e-mail or phone number to log in or create a Jumia account.</p>
+        </div>
+        <form id="login-form" style="display: flex; flex-direction: column; width: 100%; gap: 32px;" >
+            <!-- <label for="email-input">Email:</label> -->
+            <input type="email" id="email-input" autocomplete="username"  class="emailbox"  id="email-input" disabled required>
+
+            <!-- <label for="password-input">Password:</label> -->
+            <input type="password" id="password-input" autocomplete="current-password"  class="emailbox" id="email-input"  required>
+
+            <button type="button" class="continue" id="continue-email" onclick="login()">Login</button>
+        </form>
+
+        <button class=" flex resend-btn" class="" id="resend-btn">
+            <!-- <i class="fa-brands fa-square-facebook"></i> -->
+            Log in with Facebook
+        </button>
+        <p class="support">For further support, you may visit the Help Center or contact our customer service team.</p>
+        <div href="" class="jumialogo">
+            <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+            <img src="/assets/starJ.png" alt="" width="16px" height="16px" style="margin-top:4px" />
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        // Function to generate a 4-digit OTP
+        function generateOTP() {
+            const otp = Math.floor(1000 + Math.random() * 9000); // Generates a random 4-digit OTP
+            return otp;
+        }
+
+        // Function to handle the login process
+        function login() {
+            const email = document.getElementById('email-input').value;
+            const password = document.getElementById('password-input').value;
+
+            // Retrieve registered users from localStorage
+            let registeredUsers = localStorage.getItem('registeredUsers');
+            try {
+                registeredUsers = registeredUsers ? JSON.parse(registeredUsers) : [];
+            } catch (e) {
+                registeredUsers = [];
+                console.error('Error parsing registeredUsers:', e);
+            }
+
+            // Check if registeredUsers is an array
+            if (!Array.isArray(registeredUsers)) {
+                document.getElementById('message').textContent = 'Error retrieving registered users.';
+                console.error('registeredUsers is not an array:', registeredUsers);
+                return;
+            }
+
+            // Find user with the provided email
+            const user = registeredUsers.find(user => user.email === email);
+
+            if (user) {
+                // Check if the provided password matches the stored password
+                if (user.password === password) {
+                    const otp = generateOTP(); // Generate OTP
+                    localStorage.setItem('currentUser', JSON.stringify(user)); // Store the current user
+                    localStorage.setItem('generatedOTP', otp); // Store the generated OTP
+
+                    // Log OTP to console and alert
+                    console.log('Generated OTP:', otp);
+                    alert(`Your OTP is ${otp}`);
+
+                    // Redirect to OTP verification page
+                    window.location.href = 'otps.html';
+                } else {
+                    document.getElementById('message').textContent = 'Incorrect password. Please try again.';
+                }
+            } else {
+                document.getElementById('message').textContent = 'No account found with this email.';
+            }
+        }
+    </script>
+</body>
+</html>

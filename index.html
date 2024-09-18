@@ -50,7 +50,7 @@
           <div class="flex navIcons">
             <a href="#" class="flex accountsDropDown ">
               <i class="fa-regular fa-user"></i>
-              <p>Account</p>
+              <p class="acccountText">Account</p>
               <i class="fa-solid fa-caret-down" id="dropDownIcon"></i>
             </a>
 
@@ -2209,7 +2209,23 @@
       <a href="#" class="payLink flex">PAY</a>
     </div>
   </section>
+ 
+  <script>
+    window.onload = function(){
+      const username = localStorage.getItem('name');
 
+      if (username){
+        document.querySelector('.acccountText').textContent = `Hi, ${username}`
+      }
+    }
+
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (currentUser && currentUser.name) {
+            // Update the text to greet the user by their first name
+            document.querySelector('.account-text').textContent = `Hi, ${currentUser.name.split(' ')[0]}`;
+        }
+  </script>
 
   <script src="script.js"></script>
   <script src="slide.js"></script>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+    <link rel="stylesheet" href="signIn.css">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* Add your CSS styling here */
+    </style>
+</head>
+<body>
+    <div id="otp-page" class="signInpage flex step">
+        <div class="welcomePar flex">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" style="margin-top: 10px" />
+            <h3>Verify your email address</h3>
+            <div>
+                <p class="type">We have sent a verification code to</p>
+                <span id="user-email">Loading...</span>
+            </div>
+        </div>
+        
+        <div class="otp-input flex">
+            <input type="text" id="otp-1" maxlength="1" oninput="moveToNext(this, 'otp-2', null)" onkeypress="allowNumericInput(event)">
+            <input type="text" id="otp-2" maxlength="1" oninput="moveToNext(this, 'otp-3', 'otp-1')" onkeypress="allowNumericInput(event)">
+            <input type="text" id="otp-3" maxlength="1" oninput="moveToNext(this, 'otp-4', 'otp-2')" onkeypress="allowNumericInput(event)">
+            <input type="text" id="otp-4" maxlength="1" oninput="verifyOTP(); moveToNext(this, null, 'otp-3')" onkeypress="allowNumericInput(event)">
+        </div>
+
+        <button type="button" class="continue" id="continue-email" onclick="verifyOTP()">Submit</button>
+
+        <button class="resend-btn" id="resend-btn" onclick="resendOTP()">Request a new code</button>
+        
+        <p style="font-size: 15px;">For further support, you may visit the Help Center or contact our customer service team.</p>
+
+        <div class="flex">
+            <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+            <img src="/assets/starJ.png" alt="" width="16px" height="16px" />
+        </div>
+        
+        <p id="message"></p>
+    </div>
+
+    <script>
+        // Populate user's email from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const userEmail = currentUser ? currentUser.email : 'Unknown User';
+            document.getElementById('user-email').textContent = userEmail;
+        });
+
+        // Allow only numeric input in OTP fields
+        function allowNumericInput(event) {
+            const char = String.fromCharCode(event.which);
+            if (!(/[0-9]/.test(char))) {
+                event.preventDefault();
+            }
+        }
+
+        // Function to move to the next OTP input field
+        function moveToNext(current, nextFieldId, prevFieldId) {
+            if (current.value.length === 1 && nextFieldId) {
+                document.getElementById(nextFieldId).focus();
+            } else if (current.value.length === 0 && prevFieldId) {
+                document.getElementById(prevFieldId).focus();
+            }
+        }
+
+        // Function to verify the OTP entered by the user
+        function verifyOTP() {
+            const enteredOTP = document.getElementById('otp-1').value +
+                               document.getElementById('otp-2').value +
+                               document.getElementById('otp-3').value +
+                               document.getElementById('otp-4').value;
+
+            const storedOTP = localStorage.getItem('generatedOTP');
+
+            if (enteredOTP === storedOTP) {
+                document.getElementById('message').textContent = 'OTP verified! Redirecting to the home page...';
+                setTimeout(() => {
+                    window.location.href = '/index.html'; // Redirect to home page upon successful OTP verification
+                }, 1000);
+            } else {
+                document.getElementById('message').textContent = 'Invalid OTP. Please try again.';
+            }
+        }
+
+        // Resend OTP and update localStorage
+        function resendOTP() {
+            const newOTP = generateOTP();
+            localStorage.setItem('generatedOTP', newOTP);
+            alert(`A new OTP has been sent: ${newOTP}`);
+        }
+
+        // Function to generate a new OTP
+        function generateOTP() {
+            return Math.floor(1000 + Math.random() * 9000); // Generates a random 4-digit OTP
+        }
+    </script>
+</body>
+</html>

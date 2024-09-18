@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="signIn.css">
+</head>
+<body>
+    <div id="login-page" class="signInpage flex step">
+        <div class="welcomePar flex">
+            <img src="/assets/starJ.png" alt="" width="64px" height="64px" />
+            <h3 class="welcome">Welcome to Jumia</h3>
+            <p class="type">Type your e-mail or phone number to log in or create a Jumia account.</p>
+        </div>
+        <form id="login-form" style="display: flex; flex-direction: column; width: 100%; gap: 32px;" >
+            <input type="email" id="email-input" autocomplete="username" class="emailbox" required>
+            <input type="password" id="password-input" autocomplete="current-password" class="emailbox" required>
+            <button type="button" class="continue" id="continue-email" onclick="login()">Login</button>
+        </form>
+
+        <button class="flex resend-btn" id="resend-btn">Log in with Facebook</button>
+        <p class="support">For further support, you may visit the Help Center or contact our customer service team.</p>
+        <div href="" class="jumialogo">
+            <p style="font-weight: 600; font-size: 24px">JUMIA</p>
+            <img src="/assets/starJ.png" alt="" width="16px" height="16px" style="margin-top:4px" />
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function generateOTP() {
+            const otp = Math.floor(1000 + Math.random() * 9000);
+            return otp;
+        }
+
+        function login() {
+            const email = document.getElementById('email-input').value;
+            const password = document.getElementById('password-input').value;
+
+            if (!email || !password) {
+                document.getElementById('message').textContent = 'Please enter both email and password.';
+                return;
+            }
+
+            let registeredUsers = localStorage.getItem('registeredUsers');
+            try {
+                registeredUsers = registeredUsers ? JSON.parse(registeredUsers) : [];
+            } catch (e) {
+                registeredUsers = [];
+                console.error('Error parsing registeredUsers:', e);
+            }
+
+            if (!Array.isArray(registeredUsers)) {
+                document.getElementById('message').textContent = 'Error retrieving registered users.';
+                console.error('registeredUsers is not an array:', registeredUsers);
+                return;
+            }
+
+            const user = registeredUsers.find(user => user.email === email);
+
+            if (user) {
+                if (user.password === password) {
+                    const otp = generateOTP();
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    localStorage.setItem('generatedOTP', otp);
+
+                    console.log('Generated OTP:', otp);
+                    alert(`Your OTP is ${otp}`);
+                    window.location.href = 'otps.html'; // Ensure file name is correct
+                } else {
+                    document.getElementById('message').textContent = 'Incorrect password. Please try again.';
+                }
+            } else {
+                document.getElementById('message').textContent = 'No account found with this email.';
+            }
+        }
+    </script>
+</body>
+</html>
