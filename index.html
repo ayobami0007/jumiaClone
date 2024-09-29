@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="BoxSection.css">
   <link rel="stylesheet" href="jumiaDescrition.css">
   <link rel="stylesheet" href="footer.css">
+  <!-- <link rel="stylesheet" href="/addToCart/addToCart.css"> -->
 </head>
 
 <body>
@@ -32,9 +33,9 @@
     <nav class="">
       <div class="nav flex">
         <!-- <div class="link" > -->
-        <a href="" style="display: flex" class="jumialogo">
+        <a href="/index.html" style="display: flex" class="jumialogo">
           <p style="font-weight: 700; font-size: 30px">JUMIA</p>
-          <img src="assets/starJ.png" alt="" width="24px" height="24px" style="margin-top: 10px" />
+          <img src="assets/starJ.png" alt="" width="24px" height="24px" style="margin-top: 3px" />
         </a>
         <!-- </div> -->
 
@@ -62,18 +63,17 @@
             <a href="/cartList/cartList.html" class="flex">
               <i class="fa-solid fa-cart-shopping"></i>
               <p>cart</p>
+              <p class="cartNo" style="background-color: orange; padding: 3px; font-size: 12px; color: white; border-radius: 50px; height: 16px; width: 16px; text-align: center;">5</p>
             </a>
           </div>
         </div>
       </div>
     </nav>
     <div class="dropDownContent">
-      <div class="dropDownSignDiv">
+      <div class="dropDownSignDiv" id="signInSection">
         <a href="/signIn/signIn.html" class="dropDownSign">SIGN IN</a>
-      </div>
-      <hr>
-      <div class="dropDownlinkDiv">
-        <a href="/signIn/signIn.html" class="flex dropDownLinks">
+        <div class="dropDownlinkDiv">
+        <a href="/signIn/signIn.html" class="flex dropDownLinks"></a>
           <i class="fa-regular fa-user"></i>
           <p>My Account</p>
         </a>
@@ -85,6 +85,39 @@
           <i class="fa-regular fa-heart"></i>
           Saved Items
         </a>
+        </div>
+      </div>
+      <hr>
+      <div class="dropDownlinkDiv" id="userOptionsSection">
+        
+        <!-- </div> -->
+
+        <div id="loggedInOptions" style="display: none;">
+          <a href="/myAccount.html" class="flex dropDownLinks">
+            <i class="fa-regular fa-user"></i>
+            <p>My Account</p>
+          </a>
+          <a href="/orders.html" class="flex dropDownLinks">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>Orders</p>
+          </a>
+          <a href="/savedItems.html" class="flex dropDownLinks">
+            <i class="fa-regular fa-heart"></i>
+            <p>Saved Items</p>
+          </a>
+          <a href="/vouchers.html" class="flex dropDownLinks">
+            <i class="fa-solid fa-ticket"></i>
+            <p>Vouchers</p>
+          </a>
+          <a href="/inbox.html" class="flex dropDownLinks">
+            <i class="fa-regular fa-envelope"></i>
+            <p>Inbox</p>
+          </a>
+          <a href="#" id="logoutBtn" class="flex dropDownLinks">
+            <i class="fa-solid fa-sign-out"></i>
+            <p>Logout</p>
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -328,8 +361,12 @@
     </div>
 
     <div class="flex flashSaleFlex">
+      <!-- <a href="/addToCart/addToCart.html?id=1&name=Ace%20Elec%2020000%20MAh%20Ultra%20Slim%20Portable%20Power%20Bank&price=8245&oldPrice=12000&discount=-31%25&itemsLeft=19&image=/assets/flash1.jpg" class="box" data-id="1">   -->
 
-      <a href="addToCart/addToCart.html" class="box">
+      <!-- <a href="addToCart/addToCart.html" class="box"> -->
+      <a href="/addToCart/addToCart.html" class="box" data-id="1"
+        data-name="Ace Elec 20000 MAh Ultra Slim Portable Power Bank" data-price="8245" data-old-price="12000"
+        data-discount="-31%" data-items-left="19" data-image="/assets/flash1.jpg">
         <span>-40%</span>
         <img src="assets/flash1.jpg" alt="">
 
@@ -346,10 +383,12 @@
         </div>
       </a>
 
-      <div class="box">
+      <a href="/addToCart/addToCart.html" class="box" data-id="2"
+        data-name="Ace Elec 20000 MAh Ultra Slim Portable Power Bank" data-price="8245" data-old-price="11000"
+        data-discount="-31%" data-items-left="19" data-image="/assets/flash2.jpg">
         <span>-30%</span>
 
-        <img src="assets/flash2.jpg" alt="">
+        <img src="/assets/flash2.jpg" alt="">
         <div>
           <p>Ace Elec 20000 MAh Utra....</p>
           <p class="flashPrice">N 8,245</p>
@@ -359,9 +398,11 @@
             <div class="stockLevel"></div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="box">
+      <a href="/addToCart/addToCart.html" class="box" data-id="3"
+        data-name="Ace Elec 20000 MAh Ultra Slim Portable Power Bank" data-price="8241" data-old-price="10000"
+        data-discount="-32%" data-items-left="12" data-image="/assets/flash3.jpg">
         <span>-20%</span>
         <img src="assets/flash3.jpg" alt="">
         <div>
@@ -374,9 +415,11 @@
           </div>
 
         </div>
-      </div>
+      </a>
 
-      <div class="box">
+      <a href="/addToCart/addToCart.html" class="box" data-id="4"
+        data-name="Ace Elec 20000 MAh Ultra Slim Portable Power Bank" data-price="9000" data-old-price="12000"
+        data-discount="-32%" data-items-left="12" data-image="/assets/flash4.jpg">
         <span>-20%</span>
         <img src="assets/flash4.jpg" alt="">
         <div>
@@ -388,9 +431,11 @@
             <div class="stockLevel"></div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="box ">
+      <a href="/addToCart/addToCart.html" class="box" data-id="5"
+        data-name="Ace Elec 20000 MAh Ultra Slim Portable Power Bank" data-price="8241" data-old-price="10000"
+        data-discount="-32%" data-items-left="12" data-image="/assets/flash5.jpg">
         <span>-20%</span>
         <img src="assets/flash5.jpg" alt=" " width="">
         <div>
@@ -402,9 +447,11 @@
             <div class="stockLevel"></div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="box">
+      <a href="/addToCart/addToCart.html" class="box" data-id="6"
+        data-name="Ace Elec 20000 MAh Ultra Slim Portable Power Bank" data-price="8241" data-old-price="10000"
+        data-discount="-32%" data-items-left="12" data-image="/assets/flash6.jpg">
         <span>-20%</span>
         <img src="assets/flash6.jpg" alt="">
         <div>
@@ -416,7 +463,7 @@
             <div class="stockLevel"></div>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
   </section>
@@ -993,146 +1040,146 @@
   </section>
 
 
-  <!-- section12 -- SFC >
-<section class="sectionLimited boxTop  ">
-  <p  class="Limited sixBoxTop section11P ">Shop From Our Collections</p>
 
-  <div class="flex flashSaleFlex">
+  <section class="sectionLimited boxTop  ">
+    <p class="Limited sixBoxTop section11P ">Shop From Our Collections</p>
 
-    <div class="box">
-      
-      <img src="assets/flash1.jpg" alt="">
+    <div class="flex flashSaleFlex">
 
-      <div>
-        <p class="appBox">Smart Tv</p>
-       
+      <div class="box">
 
+        <img src="assets/flash1.jpg" alt="">
+
+        <div>
+          <p class="appBox">Smart Tv</p>
 
 
+
+
+        </div>
+      </div>
+
+      <div class="box">
+
+
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p class="appBox">Refrigerators</p>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p class="appBox">Blender</p>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p class="appBox">Microwave </p>
+
+
+        </div>
+      </div>
+
+      <div class="box ">
+
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p class="appBox"> Air Conditioner</p>
+
+
+
+        </div>
+      </div>
+
+      <div class="box">
+
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p class="appBox">Washing Machine</p>
+
+
+        </div>
       </div>
     </div>
 
-    <div class="box">
-     
+    <div class="flex flashSaleFlex">
 
-      <img src="assets/flash2.jpg" alt="">
-      <div>
-        <p class="appBox">Refrigerators</p>
-        
+      <div class="box">
 
+        <img src="assets/flash1.jpg" alt="">
+
+        <div>
+          <p class="appBox">Smart Tv</p>
+
+
+
+
+        </div>
+      </div>
+
+      <div class="box">
+
+
+        <img src="assets/flash2.jpg" alt="">
+        <div>
+          <p class="appBox">Refrigerators</p>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+
+        <img src="assets/flash3.jpg" alt="">
+        <div>
+          <p class="appBox">Blender</p>
+
+
+        </div>
+      </div>
+
+      <div class="box">
+
+        <img src="assets/flash4.jpg" alt="">
+        <div>
+          <p class="appBox">Microwave </p>
+
+
+        </div>
+      </div>
+
+      <div class="box ">
+
+        <img src="assets/flash5.jpg" alt=" " width="">
+        <div>
+          <p class="appBox"> Air Conditioner</p>
+
+
+
+        </div>
+      </div>
+
+      <div class="box">
+
+        <img src="assets/flash6.jpg" alt="">
+        <div>
+          <p class="appBox">Washing Machine</p>
+
+
+        </div>
       </div>
     </div>
-
-    <div class="box">
-     
-      <img src="assets/flash3.jpg" alt="">
-      <div>
-        <p class="appBox">Blender</p>
-       
-
-      </div>
-    </div>
-
-    <div class="box">
-      
-      <img src="assets/flash4.jpg" alt="">
-      <div>
-        <p class="appBox">Microwave </p>
-       
-
-      </div>
-    </div>
-
-    <div class="box ">
-      
-      <img src="assets/flash5.jpg" alt=" " width="">
-      <div>
-        <p class="appBox"> Air Conditioner</p>
-       
-
-
-      </div>
-    </div>
-
-    <div class="box">
-     
-      <img src="assets/flash6.jpg" alt="">
-      <div>
-        <p class="appBox">Washing Machine</p>
-       
-
-      </div>
-    </div>
-  </div>
-
-  <div class="flex flashSaleFlex">
-
-    <div class="box">
-      
-      <img src="assets/flash1.jpg" alt="">
-
-      <div>
-        <p class="appBox">Smart Tv</p>
-       
-
-
-
-      </div>
-    </div>
-
-    <div class="box">
-     
-
-      <img src="assets/flash2.jpg" alt="">
-      <div>
-        <p class="appBox">Refrigerators</p>
-        
-
-      </div>
-    </div>
-
-    <div class="box">
-     
-      <img src="assets/flash3.jpg" alt="">
-      <div>
-        <p class="appBox">Blender</p>
-       
-
-      </div>
-    </div>
-
-    <div class="box">
-      
-      <img src="assets/flash4.jpg" alt="">
-      <div>
-        <p class="appBox">Microwave </p>
-       
-
-      </div>
-    </div>
-
-    <div class="box ">
-      
-      <img src="assets/flash5.jpg" alt=" " width="">
-      <div>
-        <p class="appBox"> Air Conditioner</p>
-       
-
-
-      </div>
-    </div>
-
-    <div class="box">
-     
-      <img src="assets/flash6.jpg" alt="">
-      <div>
-        <p class="appBox">Washing Machine</p>
-       
-
-      </div>
-    </div>
-  </div>
-  </section>  -->
+  </section> -->
 
   <!-- section13 TFD -->
   <section class="sectionLimited boxTop ">
@@ -2209,23 +2256,48 @@
       <a href="#" class="payLink flex">PAY</a>
     </div>
   </section>
- 
   <script>
-    window.onload = function(){
-      const username = localStorage.getItem('name');
+    document.addEventListener('DOMContentLoaded', () => {
+  const productBoxes = document.querySelectorAll('.box');
+  productBoxes.forEach(box => {
+    box.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('Product clicked:', box.dataset.name);
+      const product = {
+        id: box.dataset.id,
+        name: box.dataset.name,
+        price: box.dataset.price,
+        oldPrice: box.dataset.oldPrice,
+        discount: box.dataset.discount,
+        itemsLeft: box.dataset.itemsLeft,
+        image: box.dataset.image
+      };
 
-      if (username){
-        document.querySelector('.acccountText').textContent = `Hi, ${username}`
-      }
+      // let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      // cart.push(product);
+      // localStorage.setItem('cart', JSON.stringify(cart))
+      localStorage.setItem('selectedProduct', JSON.stringify(product));
+      window.location.href = '/addToCart/addToCart.html'
+    
+      // window.location.href = `/addToCart/addToCart.html?id=${product.id}&name=${encodeURIComponent(product.name)}&price=${product.price}&oldPrice=${product.oldPrice}&discount=${encodeURIComponent(product.discount)}&itemsLeft=${product.itemsLeft}&image=${encodeURIComponent(product.image)}`;
     }
 
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    )
 
-        if (currentUser && currentUser.name) {
-            // Update the text to greet the user by their first name
-            document.querySelector('.account-text').textContent = `Hi, ${currentUser.name.split(' ')[0]}`;
-        }
+
+
+
+
+
+
+
+
+
+  });
+})
   </script>
+<script src="/cartList/cartList.js"></script>
+ <script src="nav.js"></script>
 
   <script src="script.js"></script>
   <script src="slide.js"></script>

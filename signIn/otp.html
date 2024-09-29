@@ -734,3 +734,146 @@ function validateKey(event) {
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+    //     const cartItemsDiv = document.getElementById('cartItems');
+    //     const totalPriceDiv = document.getElementById('totalPrice');
+    
+    //     function displayCartItems() {
+    //         const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    //         cartItemsDiv.innerHTML = ''; // Clear previous items
+    //         let totalPrice = 0;
+    
+    //         if (cart.length === 0) {
+    //             cartItemsDiv.innerHTML = `<p>Your cart is empty.</p>`;
+    //         } else {
+    //             cart.forEach(product => {
+    //                 const itemHTML = `
+    //                     <div class="addedItemsDivDetails">
+    //                         <img src="${product.image}" alt="${product.name}">
+    //                         <div>
+    //                             <h4>${product.name}</h4>
+    //                             <p>₦ ${product.price}</p>
+    //                             <p>Quantity: ${product.quantity}</p>
+    //                         </div>
+    //                         <div class="removeItem" data-id="${product.id}">
+    //                             <i class="fa-solid fa-trash"></i>
+    //                             <p>REMOVE</p>
+    //                         </div>
+    //                     </div>
+    //                 `;
+    //                 cartItemsDiv.innerHTML += itemHTML;
+    //                 totalPrice += product.price * product.quantity; // Update total
+    //             });
+    //         }
+    
+    //         totalPriceDiv.innerText = `Total: ₦ ${totalPrice.toFixed(2)}`;
+    //     }
+    
+    //     // Call to display cart items
+    //     displayCartItems();
+    // });
+    
+    
+    
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartItemsDiv = document.querySelector('.addedItemsSection'); // Use the correct selector
+        const totalPriceDiv = document.getElementById('totalPrice');
+        const emptyCartSection = document.querySelector('.cartSection'); // Empty cart section
+        const addedSection = document.querySelector('.added'); 
+        function displayCartItems() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItemsDiv.innerHTML = ''; // Clear previous items
+            let totalPrice = 0;
+    
+            if (cart.length === 0) {
+                emptyCartSection.style.display = 'block';
+                addedSection.style.display = 'none';
+            } else {
+                emptyCartSection.style.display = 'none';
+                addedSection.style.display = 'block';
+                cart.forEach(product => {
+                    const itemHTML = `
+                        <div>
+                            <hr>
+                            // <div class="addedItemsDivDetails">
+                                <div class="addedItemsDetailDiv">
+                                    <img src="${product.image}" alt="${product.name}">
+                                    <div class="addedItemsDetails">
+                                        <a href="">${product.name}</a>
+                                        <a class="seller" href="">Seller: <span>${product.seller}</span></a>
+                                        <a class="unitLeft" href="">Few units left</a>
+                                    </div>
+                                </div>
+                                <div class="addedItemPriceDiv">
+                                    <h3>₦ ${product.price}</h3>
+                                    <div class="flex">
+                                        <p>${product.oldPrice}</p>
+                                        <p class="addedItemDiscount">${product.discount}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addOrRemoveItem flex">
+                                <div class="removeItem flex" data-id="${product.id}">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <p>REMOVE</p>
+                                </div>
+                                <div class="addMoreItem">
+                                    <button><i class="fa-solid fa-minus"></i></button>
+                                    <p>${product.quantity}</p>
+                                    <button><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsDiv.innerHTML += itemHTML;
+                    totalPrice += product.price * product.quantity; // Update total
+                });
+            }
+    
+            totalPriceDiv.innerText = `Total: ₦ ${totalPrice.toFixed(2)}`;
+        }
+    
+        // Call to display cart items
+        displayCartItems();
+    
+    
+    
+        
+    });
+    
+    
+    
+    

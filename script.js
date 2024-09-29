@@ -1,16 +1,16 @@
 
 
 
-window.onscroll = function () {
-    var navbar = document.getElementsByClassName("nav");
-    var sticky = navbar.offsetTop;
+// window.onscroll = function () {
+//     var navbar = document.getElementsByClassName("nav");
+//     var sticky = navbar.offsetTop;
 
-    if (window.pageYoffset > sticky) {
-        navbar.classList.add("fixedNav")
-    } else {
-        navbar.classList.remove("fixed-nav")
-    }
-}
+//     if (window.pageYoffset > sticky) {
+//         navbar.classList.add("fixedNav")
+//     } else {
+//         navbar.classList.remove("fixed-nav")
+//     }
+// }
 
 
 
@@ -53,39 +53,7 @@ let countDownInterval = setInterval(updateCountDown, 1000)
 
 
 
-// dropdowntoggle
-// document.addEventListener('DOMContentLoaded', function(){
 
-// const dropDownButton = document.querySelector(".accountsDropDown");
-// const dropDownContent = document.querySelector(".dropDownContent");
-// const dropDownIcon = document.getElementById("dropDownIcon");
-
-// dropDownButton.addEventListener('click', function(event){
-//     dropDownContent.classList.toggle('activ');
-//     dropDownButton.classList.toggle('activ');
-
-//     if (dropDownContent.classList.contains('activ')){
-// dropDownIcon.classList.remove('fa-caret-down')
-// dropDownIcon.classList.add('fa-caret-up')
-//     } else{
-//         dropDownIcon.classList.add('fa-caret-down')
-//         dropDownIcon.classList.remove('fa-caret-up')
-
-//     }
-// });
-
-// window.addEventListener('click', function(event) {
-//     if (!event.target.closest('#dropDownButton')) {
-//         if (dropDownContent.classList.contains('active')) {
-//             dropDownContent.classList.remove('active');
-//             dropDownButton.classList.remove('active');
-//             dropDownIcon.classList.remove('fa-caret-up');
-//             dropDownIcon.classList.add('fa-caret-down');
-//         }
-//     }
-// });
-
-// });
 
 document.addEventListener('DOMContentLoaded', function() {
     const dropDownButton = document.querySelector(".accountsDropDown");
@@ -122,40 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const DropdownBar = document.querySelector(".fa-bars")
-//     const dropDownContent = document.querySelector(".sideBarLink")
 
-
-//     if (DropdownBar && dropDownContent){
-//         DropdownBar.addEventListener('mouseenter', function(){
-//             dropDownContent.classList.add('sideActive')
-//         })
-
-//         dropDownContent.addEventListener('mouseenter', function(){
-//             dropDownContent.classList.add('sideActive')
-//         })
-
-//         DropdownBar.addEventListener('mouseleave', function(){
-//             setTimeout(() =>{
-//                 if(!dropDownContent.matches(':hover')){
-//                     dropDownContent.classList.remove('sideActive')
-//                 }
-//             }, 100);
-//         })
-
-//         dropDownContent.addEventListener('mouseleave', function(){
-//             setTimeout(() => {
-//                 if(!DropdownBar.matches(':hover')){
-//                     dropDownContent.classList.remove(sideActive)
-//                 }
-//             }, 100)
-//         })
-//     } else {
-//         console.error("dropdown elements not found")
-//     }
-// }
-// )
 
 document.addEventListener('DOMContentLoaded', function() {
 // function setupHoverDropdown(dropDownButtonSelector, dropDownContentSelector) {
@@ -197,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     } else {
-        console.error("Dropdown elements not found for hover dropdown");
+        // console.error("Dropdown elements not found for hover dropdown");
     }
 }
 

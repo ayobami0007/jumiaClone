@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/BoxSection.css">
     <link rel="stylesheet" href="/appliances/appliances.css">
     <link rel="stylesheet" href="cartList.css">
+    <link rel="stylesheet" href="/addToCart/addToCart.css">
 </head>
 
 <body>
@@ -28,50 +29,101 @@
                     <img src="/assets/starJ.png" alt="" width="10px" height="10px" style="margin-top: 4px" />
                 </div>
                 <a href="#">PAY</a>
-            </div>
-        </div>
+             </div>
+         </div>
 
-        <nav class="">
+         <nav class="">
             <div class="nav flex">
-                <!-- <div class="link" > -->
-                <i class="fa-solid fa-bars"></i>
-                <a href="/index.html" style="display: flex" class="jumialogo">
-                    <p style="font-weight: 700; font-size: 30px">JUMIA</p>
-                    <img src="/assets/starJ.png" alt="" width="24px" height="24px" style="margin-top: 10px" />
-                </a>
-                <!-- </div> -->
-
-                <div class="flex formInpIcon">
-                    <div class="flex searchInputing">
-                        <div class="flex searchInput">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Search products, brands and categories" class="Input" />
-                        </div>
-
-                        <button>SEARCH</button>
-                    </div>
-                    <div class="flex navIcons">
-                        <a href="#" class="flex accountsDropDown ">
-                            <i class="fa-regular fa-user"></i>
-                            <p>Account</p>
-                            <i class="fa-solid fa-caret-down" id="dropDownIcon"></i>
-                        </a>
-
-                        <a href="" class="flex help">
-                            <i class="fa-regular fa-circle-question"></i>
-                            <p>Help</p>
-                            <i class="fa-solid fa-caret-down"></i>
-                        </a>
-                        <a href="" class="flex">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <p>cart</p>
-                        </a>
-                    </div>
+              <!-- <div class="link" > -->
+              <a href="/index.html" style="display: flex" class="jumialogo">
+                <p style="font-weight: 700; font-size: 30px">JUMIA</p>
+                <img src="/assets/starJ.png" alt="" width="24px" height="24px" style="margin-top: 3px" />
+              </a>
+              <!-- </div> -->
+      
+              <div class="flex formInpIcon">
+                <div class="flex searchInputing">
+                  <div class="flex searchInput">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search products, brands and categories" class="Input" />
+                  </div>
+      
+                  <button>SEARCH</button>
                 </div>
+                <div class="flex navIcons">
+                  <a href="#" class="flex accountsDropDown ">
+                    <i class="fa-regular fa-user"></i>
+                    <p class="acccountText">Account</p>
+                    <i class="fa-solid fa-caret-down" id="dropDownIcon"></i>
+                  </a>
+      
+                  <a href="" class="flex help">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <p>Help</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                  </a>
+                  <a href="/cartList/cartList.html" class="flex">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>cart</p>
+                    <p class="cartNo" style="background-color: orange; padding: 3px; font-size: 12px; color: white; border-radius: 50px; height: 16px; width: 16px; text-align: center;">5</p>
+                  </a>
+                </div>
+              </div>
             </div>
-        </nav>
+          </nav>
+          <div class="dropDownContent">
+            <div class="dropDownSignDiv" id="signInSection">
+              <a href="/signIn/signIn.html" class="dropDownSign">SIGN IN</a>
+              <div class="dropDownlinkDiv">
+              <a href="/signIn/signIn.html" class="flex dropDownLinks"></a>
+                <i class="fa-regular fa-user"></i>
+                <p>My Account</p>
+              </a>
+              <a href="/signIn/signIn.html" class="flex dropDownLinks">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p> Orders</p>
+              </a>
+              <a href="/signIn/signIn.html" class="flex dropDownLinks">
+                <i class="fa-regular fa-heart"></i>
+                Saved Items
+              </a>
+              </div>
+            </div>
+            <hr>
+            <div class="dropDownlinkDiv" id="userOptionsSection">
+              
+              <!-- </div> -->
+      
+              <div id="loggedInOptions" style="display: none;">
+                <a href="/myAccount.html" class="flex dropDownLinks">
+                  <i class="fa-regular fa-user"></i>
+                  <p>My Account</p>
+                </a>
+                <a href="/orders.html" class="flex dropDownLinks">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <p>Orders</p>
+                </a>
+                <a href="/savedItems.html" class="flex dropDownLinks">
+                  <i class="fa-regular fa-heart"></i>
+                  <p>Saved Items</p>
+                </a>
+                <a href="/vouchers.html" class="flex dropDownLinks">
+                  <i class="fa-solid fa-ticket"></i>
+                  <p>Vouchers</p>
+                </a>
+                <a href="/inbox.html" class="flex dropDownLinks">
+                  <i class="fa-regular fa-envelope"></i>
+                  <p>Inbox</p>
+                </a>
+                <a href="#" id="logoutBtn" class="flex dropDownLinks">
+                  <i class="fa-solid fa-sign-out"></i>
+                  <p>Logout</p>
+                </a>
+              </div>
+            </div>
+          </div>
 
-        <div class="sideBarLink">
+         <div class="sideBarLink">
             <ul class="">
                 <!-- <li>
           <a href="">
@@ -119,26 +171,7 @@
             <p>Musical Insruments</p>
             <a href=""><i class="fa-solid fa-mobile-screen"></i> Other categories</a>
         </div>
-        <div class="dropDownContent">
-            <div class="dropDownSignDiv">
-                <a href="/signIn/signIn.html" class="dropDownSign">SIGN IN</a>
-            </div>
-            <hr>
-            <div class="dropDownlinkDiv">
-                <a href="/signIn/signIn.html" class="flex dropDownLinks">
-                    <i class="fa-regular fa-user"></i>
-                    <p>My Account</p>
-                </a>
-                <a href="/signIn/signIn.html" class="flex dropDownLinks">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <p> Orders</p>
-                </a>
-                <a href="/signIn/signIn.html" class="flex dropDownLinks">
-                    <i class="fa-regular fa-heart"></i>
-                    Saved Items
-                </a>
-            </div>
-        </div>
+        
     </header>
 
     <section class="cartSection boxTop">
@@ -150,7 +183,84 @@
         </div>
     </section>
 
+    <section class="boxTop ">
+        <div class="added ">
+            <div class="addedContent ">
+                <h3 class="cartText">Cart (1)</h3>
+                <div class=" addedItemsSection  ">
+                    <div>
+                        <hr>
+                        <div class="addedItemsDivDetails">
+                            <div class="addedItemsDetailDiv">
+                                <img src="/assets/jumiaAppliances.png" alt="">
+                                <div class="addedItemsDetails">
+                                    <a href="">Malta Guinness Can 330ml x24</a>
+                                    <a class="seller" href="">Seller: <span>Jumia</span> </a>
+                                    <a class="unitLeft" href="">Few units left</a>
+                                    <!-- <a href="" class="express">JUMIA <span>EXPRESS</span></a> -->
+                                </div>
+                            </div>
+                            <div class="addedItemPriceDiv">
+                                <h3>N 9,000</h3>
+                                <div class="flex">
+                                    <p>12,000</p>
+                                    <p class="addedItemDiscount">-25% </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addOrRemoveItem flex">
+                            <div class="removeItem flex">
+                                <i class="fa-solid fa-trash"></i>
+                                <p>REMOVE</p>
+                            </div>
+                            <div class="addMoreItem">
+                                <button > <i class="fa-solid fa-minus"></i></button>
+                                <p>1</p>
+                                <button><i class="fa-solid fa-plus"></i></button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="cartSummary">
+                <div>
+                    <h4 class="cartTextSum">CART SUMMARY</h4>
+                    <hr>
+                    <div class="cartSummaryDivPad" style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="SubtotalDiv">
+                            <h5>Subtotal</h5>
+                            <h3 id="totalPrice">₦ 361,560</h3>
+                        </div>
+                        <p class="deliveryText">Delivery fees not included yet.</p>
+                    </div>
+                    <hr>
+                    <div class="cartSummaryDivPad">
+                        <button class=" checkoutBtn" sy>
+                            CHECKOUT (₦ 361,560)
+                        </button>
+                    </div>
+                    <p></p>
+                </div>
+
+                <div class="cartSummaryReturns cartSummaryDivPad">
+                    <h4>Returns are easy</h4>
+                    <p>Free return within 7 days for ALL eligible items </p>
+                    <a href="">Details</a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
     <script src="/script.js"></script>
+    <script src="/nav.js"></script>
+    <!-- <script src="/addToCart/addToCart.js"></script> -->
+    <script src="cartList.js"></script>
 </body>
 
 </html>

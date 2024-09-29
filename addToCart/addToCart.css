@@ -136,7 +136,34 @@ width: 20%;
 
 .addToCartBtn p{
     font-weight: 600    ;
+    cursor: pointer;
 }
+
+.addToCartBtn.remove{
+    display: none;
+}
+.addMoreItems{
+gap: 12px;
+display: none;
+}
+
+.addMoreItems.active{
+    display: flex;
+    align-items: center;
+    background: none;
+}
+.addMoreItems button{
+    border: 0;
+    background-color: orange;
+    padding: 8px;
+    border-radius: 4px;
+color: white;
+border: none;
+outline: none;
+cursor: pointer;
+}
+
+
 
 .addToCart .Promotions{
     font-size: 14px;
