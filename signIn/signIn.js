@@ -202,7 +202,7 @@ function startTimer() {
 
             // Save updated registeredUsers array to localStorage
             localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
-            window.location.href = "login.html"; // Redirect to index.html when timer reaches 0
+            window.location.href = "logIn.html"; // Redirect to index.html when timer reaches 0
         }
     }, 1000);
 }
