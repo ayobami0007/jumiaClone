@@ -93,6 +93,7 @@ function updateCartQuantity(newQuantity) {
         itemCount++;
         updateItemCount();
         updateCartQuantity(itemCount); 
+        alert("product added successfully")
     });
 
     minusButton.addEventListener('click', () => {
@@ -100,12 +101,15 @@ function updateCartQuantity(newQuantity) {
             itemCount--;
             updateItemCount();
             updateCartQuantity(itemCount); 
+            alert(" Item  has been updated")
+           
         } else {
             removeProductFromCart()
             addMoreItems.classList.remove('active');
             cartButton.classList.remove('remove');
             itemCount = 1;
             updateCartQuantity(itemCount); 
+           
         }
     });
 

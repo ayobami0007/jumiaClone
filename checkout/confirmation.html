@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="checkout.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <header>
+        <h1>Thank You for Your Purchase!</h1>
+    </header>
+    <main>
+        <section class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Your order has been successfully placed. Here are the details:</p>
+            
+            <div class="summary-details" style="margin-top: 10px;">
+                <h3>Shipping Address</h3>
+                <p id="shippingAddress"></p>
+                
+                <h3 style="margin-top: 10px;">Payment Information</h3>
+                <p>Your payment has been processed successfully.</p>
+                
+                <h3 style="margin-top: 10px;">Order Details</h3>
+                <ul id="orderItems">
+                    <!-- Order items will be populated here -->
+                </ul>
+                
+                <h3>Total Amount</h3>
+                <p id="totalAmount"></p>
+            </div>
+
+            <button onclick="goHome()" style="margin-top: 10px;">Continue Shopping</button>
+        </section>
+    </main>
+
+    <script>
+        // Retrieve data from local storage and populate the confirmation page
+        window.onload = function() {
+            // Get address data from local storage
+            const addressData = JSON.parse(localStorage.getItem("addressData"));
+            if (addressData) {
+                document.getElementById("shippingAddress").innerText = `${addressData.fullName} || ${addressData.address} ||  ${addressData.city} || ${addressData.state} ||  ${addressData.zip} || ${addressData.phone}`;
+            }
+
+            // Get cart items and total amount from local storage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderItemsList = document.getElementById("orderItems");
+            let totalAmount = 0;
+
+            cart.forEach(product => {
+                const listItem = document.createElement("li");
+                listItem.innerText = `${product.name} - ₦ ${product.price} x ${product.quantity}`;
+                orderItemsList.appendChild(listItem);
+                totalAmount += product.price * product.quantity; // Update total
+            });
+
+            document.getElementById("totalAmount").innerText = `₦ ${totalAmount.toLocaleString()}`;
+        };
+
+        // Redirect to home page (you can set the URL to your homepage)
+        function goHome() {
+            window.location.href = "/index.html"; 
+            localStorage.removeItem('cart');// Replace with your actual homepage URL
+        }
+    </script>
+</body>
+</html>

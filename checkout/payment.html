@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Payment</title>
+    <link rel="stylesheet" href="checkout.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <header>
+        <h1>Payment Information</h1>
+    </header>
+    <main>
+        <section class="payment-form">
+            <h2>Complete Your Purchase</h2>
+            <form id="paymentForm">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+
+                <label for="expiryDate">Expiry Date (MM/YY):</label>
+                <input type="text" id="expiryDate" name="expiryDate" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <label for="billingAddress">Billing Address:</label>
+                <textarea id="billingAddress" name="billingAddress" required></textarea>
+
+                <button type="submit">Pay Now</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.getElementById("paymentForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            // Implement payment processing here (e.g., API call)
+            alert("Payment processed successfully! Thank you for your purchase.");
+            // Optionally, redirect to confirmation page
+            // localStorage.removeItem('cart');
+            window.location.href = "confirmation.html";
+        });
+    </script>
+</body>
+</html>

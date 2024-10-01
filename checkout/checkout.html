@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Address Form</title>
+    <link rel="stylesheet" href="checkout.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+    </header>
+    <main>
+        <section class="checkout-form">
+            <h2>Shipping Address</h2>
+            <form id="addressForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <button type="submit">Continue to Payment</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.getElementById("addressForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            // Get form values
+            const formData = new FormData(this);
+            const addressData = {};
+            formData.forEach((value, key) => {
+                addressData[key] = value;
+            });
+            // Store data in local storage
+            localStorage.setItem("addressData", JSON.stringify(addressData));
+            // Redirect to payment page
+            window.location.href = "payment.html";
+        });
+    </script>
+</body>
+</html>

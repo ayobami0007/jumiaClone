@@ -138,6 +138,7 @@ nav {
   gap: 18px;
   font-weight: 600;
   font-size: 18px;
+  display: flex;
 }
 
 .navIcons a {
@@ -148,6 +149,20 @@ nav {
 
 .navIcons a:hover {
   color: orange;
+}
+
+.cartNo{
+  background-color: orange;
+   padding: 2px; 
+    font-size: 10px; 
+    color: white; 
+    border-radius: 50px;
+    height: 14px;
+     width: 14px;
+     text-align: center;
+     position: relative;
+     bottom: 8px;
+     right: 66px;
 }
 
 /* the nav .dropDown */
@@ -207,9 +222,22 @@ nav {
   border-radius: 4px;
   color: black;
 }
+.acccountText{
+  width: 65px;
+   max-width: 100px;
+}
 
 #dropDownIcon {
   transition: transform 0.3s ease;
+}
+
+#logoutBtn{
+  /* background-color: orange; */
+  /* text-align: center; */
+  color: orange;
+  font-size: 16px;
+ justify-content: center;
+ /* padding: 10px; */
 }
 
 .fa-caret-down {
