@@ -51,7 +51,7 @@
           <div class=" navIcons">
             <a href="#" class="flex accountsDropDown ">
               <i class="fa-regular fa-user"></i>
-              <p  class="acccountText">Account</p>
+              <p class="acccountText">Account</p>
               <i class="fa-solid fa-caret-down" id="dropDownIcon"></i>
             </a>
 
@@ -63,7 +63,7 @@
             <a href="/cartList/cartList.html" class="flex">
               <i class="fa-solid fa-cart-shopping"></i>
               <p>cart</p>
-              <p class="cartNo" >5</p>
+              <p class="cartNo">5</p>
             </a>
           </div>
         </div>
@@ -73,23 +73,23 @@
       <div class="dropDownSignDiv" id="signInSection">
         <a href="/signIn/signIn.html" class="dropDownSign">SIGN IN</a>
         <div class="dropDownlinkDiv">
-        <a href="/signIn/signIn.html" class="flex dropDownLinks"></a>
+          <a href="/signIn/signIn.html" class="flex dropDownLinks">
           <i class="fa-regular fa-user"></i>
-          <p>My Account</p>
-        </a>
-        <a href="/signIn/signIn.html" class="flex dropDownLinks">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <p> Orders</p>
-        </a>
-        <a href="/signIn/signIn.html" class="flex dropDownLinks">
-          <i class="fa-regular fa-heart"></i>
-          Saved Items
-        </a>
+          <p>Account</p>
+          </a>
+          <a href="/signIn/signIn.html" class="flex dropDownLinks">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p> Orders</p>
+          </a>
+          <a href="/signIn/signIn.html" class="flex dropDownLinks">
+            <i class="fa-regular fa-heart"></i>
+            Saved Items
+          </a>
         </div>
       </div>
       <!-- <hr> -->
       <div class="dropDownlinkDiv" id="userOptionsSection">
-        
+
         <!-- </div> -->
 
         <div id="loggedInOptions" style="display: none;">
@@ -114,9 +114,9 @@
             <p>Inbox</p>
           </a>
           <hr style="margin-top: 8px;">
-          <a  href="#" id="logoutBtn" class="flex dropDownLinks">
+          <a href="#" id="logoutBtn" class="flex dropDownLinks">
             <i class="fa-solid fa-sign-out"></i>
-            <p >Logout</p>
+            <p>Logout</p>
           </a>
         </div>
       </div>
@@ -372,7 +372,7 @@
         <img src="assets/flash1.jpg" alt="">
 
         <div>
-          <p >Ace Elec 20000 MAh Utra....</p>
+          <p>Ace Elec 20000 MAh Utra....</p>
           <p class="flashPrice">N 8,245</p>
           <del>N 12000</del>
           <p class="itemsLeft"> 351 items left</p>
@@ -2259,33 +2259,31 @@
   </section>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-  const productBoxes = document.querySelectorAll('.box');
-  productBoxes.forEach(box => {
-    box.addEventListener('click', (e) => {
-      e.preventDefault();
-      console.log('Product clicked:', box.dataset.name);
-      const product = {
-        id: box.dataset.id,
-        name: box.dataset.name,
-        price: box.dataset.price,
-        oldPrice: box.dataset.oldPrice,
-        discount: box.dataset.discount,
-        itemsLeft: box.dataset.itemsLeft,
-        image: box.dataset.image
-      };
+      const productBoxes = document.querySelectorAll('.box');
+      productBoxes.forEach(box => {
+        box.addEventListener('click', (e) => {
+          e.preventDefault();
+          console.log('Product clicked:', box.dataset.name);
+          const product = {
+            id: box.dataset.id,
+            name: box.dataset.name,
+            price: box.dataset.price,
+            oldPrice: box.dataset.oldPrice,
+            discount: box.dataset.discount,
+            itemsLeft: box.dataset.itemsLeft,
+            image: box.dataset.image
+          };
 
-      // let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      // cart.push(product);
-      // localStorage.setItem('cart', JSON.stringify(cart))
-      localStorage.setItem('selectedProduct', JSON.stringify(product));
-      window.location.href = '/addToCart/addToCart.html'
-    
-      // window.location.href = `/addToCart/addToCart.html?id=${product.id}&name=${encodeURIComponent(product.name)}&price=${product.price}&oldPrice=${product.oldPrice}&discount=${encodeURIComponent(product.discount)}&itemsLeft=${product.itemsLeft}&image=${encodeURIComponent(product.image)}`;
-    }
+          // let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          // cart.push(product);
+          // localStorage.setItem('cart', JSON.stringify(cart))
+          localStorage.setItem('selectedProduct', JSON.stringify(product));
+          window.location.href = '/addToCart/addToCart.html'
 
-    )
+          // window.location.href = `/addToCart/addToCart.html?id=${product.id}&name=${encodeURIComponent(product.name)}&price=${product.price}&oldPrice=${product.oldPrice}&discount=${encodeURIComponent(product.discount)}&itemsLeft=${product.itemsLeft}&image=${encodeURIComponent(product.image)}`;
+        }
 
-
+        )
 
 
 
@@ -2294,11 +2292,13 @@
 
 
 
-  });
-})
+
+
+      });
+    })
   </script>
-<script src="/cartList/cartList.js"></script>
- <script src="nav.js"></script>
+  <script src="/cartList/cartList.js"></script>
+  <script src="nav.js"></script>
 
   <script src="script.js"></script>
   <script src="slide.js"></script>

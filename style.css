@@ -211,7 +211,9 @@ nav {
   border-top: 0.8px solid gray;
 }
 .dropDownLinks {
-  gap: 16px;
+  /* display: flex; */ 
+   gap: 16px; 
+  /* width: 100%; */
 }
 
 .accountsDropDown.active,
