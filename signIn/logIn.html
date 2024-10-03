@@ -70,7 +70,9 @@
                     alert(`Your OTP is ${otp}`);
                     window.location.href = 'otps.html'; // Ensure file name is correct
                 } else {
+                    alert("Incorrect password. Please try again.");
                     document.getElementById('message').textContent = 'Incorrect password. Please try again.';
+         
                 }
             } else {
                 document.getElementById('message').textContent = 'No account found with this email.';

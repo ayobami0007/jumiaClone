@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ///
     function removeCartItem(productId) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart = cart.filter(item => item.id !== productkId)
+        cart = cart.filter(item => item.id !== productId)
         localStorage.setItem('cart', JSON.stringify(cart))
         displayCartItems()
         displayCartCount();
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         
         // Simulate payment success
-        alert('Payment successful! Your order has been placed.');
+        alert('Proceed to make payment .');
     
         // Clear the cart from localStorage
         // localStorage.removeItem('cart');
